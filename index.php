@@ -286,41 +286,64 @@
             text-align: right;
         }
 
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
     </style>
     
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="56">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="assets/Logo.png" alt="Logo de RAMTO Decoración">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="assets/Logo.png" alt="Logo de RAMTO Decoración">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                        <a class="nav-link" href="index.php">INICIO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#decoracion">DECORACIÓN</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tapiceria">TAPICERÍA</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#promociones">PROMOCIONES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="nosotros/nosotros.php">NOSOTROS</a>
-                    </li>
-                </ul>
-            </div>
+                    <a class="nav-link" href="index.php">INICIO</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="decoracion/decoracion.php" id="navbarDecoracion" role="button">
+                        DECORACIÓN
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDecoracion">
+                        <a class="dropdown-item" href="decoracion/decoracion.php">Cortinas y Persianas</a>
+                        <a class="dropdown-item" href="decoracion/decoracion.php">Acabados</a>
+                        <a class="dropdown-item" href="decoracion/decoracion.php">Pisos</a>
+                        <a class="dropdown-item" href="decoracion/decoracion.php">Pinturas</a>
+                        <a class="dropdown-item" href="decoracion/decoracion.php">Manteleria</a>
+                        <a class="dropdown-item" href="decoracion/decoracion.php">Plantas</a>
+                        <a class="dropdown-item" href="decoracion/decoracion.php">Exterior</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="tapiceria/tapiceria.php" id="navbarTapiceria" role="button">
+                        TAPICERÍA
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarTapiceria">
+                        <a class="dropdown-item" href="tapiceria/tapiceria.php">Alfombras</a>
+                        <a class="dropdown-item" href="tapiceria/tapiceria.php">Viniles</a>
+                        <a class="dropdown-item" href="tapiceria/tapiceria.php">Tapiceria</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="promociones/promociones.php">PROMOCIONES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="nosotros/nosotros.php">NOSOTROS</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
       <!-- Page Header -->
   <header class="header">
@@ -469,7 +492,7 @@
         <div class="container">
             <div class="row justify-content-between align-items-center text-center">
                 <div class="col-md-3 mb-3 mb-md-0">
-                    <img src="../assets/Logo.png" width="100" alt="Logo de RAMTO Decoración">
+                    <img src="assets/Logo.png" width="100" alt="Logo de RAMTO Decoración">
                 </div>
                 <div class="col-md-9">
                     <div class="row justify-content-center">
@@ -498,6 +521,9 @@
 </footer>
 <!-- End of Footer Section -->
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
 </body>

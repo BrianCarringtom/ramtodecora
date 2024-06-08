@@ -53,7 +53,7 @@
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="56">
 
-<!-- Navigation -->
+ <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">
@@ -102,52 +102,7 @@
     </div>
 </nav>
 
-    <!-- Mission Section -->
-    <section id="mision" class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center section-title">
-                    <h2>Misión</h2>
-                </div>
-                <div class="col-md-12 section-content">
-                    <p class="text-center">Te brindamos soluciones de decoración con nuestra amplia variedad de cortinas, telas decorativas, tapices, alfombras, tapetes y accesorios decorativos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of Mission Section -->
 
-    <!-- Vision Section -->
-    <section id="vision" class="section bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center section-title">
-                    <h2>Visión</h2>
-                </div>
-                <div class="col-md-12 section-content">
-                    <p class="text-center">Somos una empresa comercializadora, diseñadora y productora de artículos de decoración entre los que destacan textiles decorativos para uso interior y exterior. Contamos con un sistema integral de servicios que complementan nuestros productos, como la limpieza y el recubrimiento de teflón para el cuidado de los tapices.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of Vision Section -->
-
-    <!-- Hours Section -->
-    <section id="horarios" class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center section-title">
-                    <h2>Horarios</h2>
-                </div>
-                <div class="col-md-12 section-content">
-                    <p class="text-center"><strong>Lunes a Viernes:</strong> 9:00 am - 6:00 pm</p>
-                    <p class="text-center"><strong>Sábados:</strong> 9:00 am - 2:00 pm</p>
-                    <p class="text-center"><strong>Domingos:</strong> Cerrado</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of Hours Section -->
 
     <!-- Footer Section -->
     <footer class="footer">
@@ -186,6 +141,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 </body>
 </html>

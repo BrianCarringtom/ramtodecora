@@ -34,16 +34,17 @@
             margin-right: 15px;
         }
         .navbar-nav:hover {
-            background-color: #343a40; /* Color de fondo al hacer hover */
+            background-color: #343a40;
         }
-
-        /* Estilo para los elementos de navegación */
         .navbar-nav .nav-item .nav-link {
             transition: color 0.3s;
         }
-
         .navbar-nav .nav-item .nav-link:hover {
-            color: #FF0000; /* Color de texto al hacer hover */
+            color: #FF0000;
+        }
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #343a40;
+            color: #FF0000;
         }
 
         .nav-item.dropdown:hover .dropdown-menu {
@@ -102,90 +103,45 @@
     </div>
 </nav>
 
-    <!-- Mission Section -->
-    <section id="mision" class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center section-title">
-                    <h2>Misión</h2>
-                </div>
-                <div class="col-md-12 section-content">
-                    <p class="text-center">Te brindamos soluciones de decoración con nuestra amplia variedad de cortinas, telas decorativas, tapices, alfombras, tapetes y accesorios decorativos.</p>
-                </div>
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <div class="row justify-content-between align-items-center text-center">
+            <div class="col-md-3 mb-3 mb-md-0">
+                <img src="../assets/Logo.png" width="100" alt="Logo de RAMTO Decoración">
             </div>
-        </div>
-    </section>
-    <!-- End of Mission Section -->
-
-    <!-- Vision Section -->
-    <section id="vision" class="section bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center section-title">
-                    <h2>Visión</h2>
-                </div>
-                <div class="col-md-12 section-content">
-                    <p class="text-center">Somos una empresa comercializadora, diseñadora y productora de artículos de decoración entre los que destacan textiles decorativos para uso interior y exterior. Contamos con un sistema integral de servicios que complementan nuestros productos, como la limpieza y el recubrimiento de teflón para el cuidado de los tapices.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of Vision Section -->
-
-    <!-- Hours Section -->
-    <section id="horarios" class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center section-title">
-                    <h2>Horarios</h2>
-                </div>
-                <div class="col-md-12 section-content">
-                    <p class="text-center"><strong>Lunes a Viernes:</strong> 9:00 am - 6:00 pm</p>
-                    <p class="text-center"><strong>Sábados:</strong> 9:00 am - 2:00 pm</p>
-                    <p class="text-center"><strong>Domingos:</strong> Cerrado</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of Hours Section -->
-
-    <!-- Footer Section -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row justify-content-between align-items-center text-center">
-                <div class="col-md-3 mb-3 mb-md-0">
-                    <img src="../assets/Logo.png" width="100" alt="Logo de RAMTO Decoración">
-                </div>
-                <div class="col-md-9">
-                    <div class="row justify-content-center">
-                        <div class="col-md-4 mb-3">
-                            <h5 class="font-weight-bold">Nuestra Empresa</h5>
-                            <p>Somos una empresa comercializadora, diseñadora y productora de artículos de decoración, limpieza y recubrimiento de teflón para el cuidado de los tapices.</p>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <h5 class="font-weight-bold">Dirección</h5>
-                            <p>7 A. Pte. Nte. 646 Col. Centro, Colón 29000 Tuxtla Gutiérrez, Chiapas.</p>
-                        </div>
+            <div class="col-md-9">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 mb-3">
+                        <h5 class="font-weight-bold">Nuestra Empresa</h5>
+                        <p>Somos una empresa comercializadora, diseñadora y productora de artículos de decoración, limpieza y recubrimiento de teflón para el cuidado de los tapices.</p>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <h5 class="font-weight-bold">Dirección</h5>
+                        <p>7 A. Pte. Nte. 646 Col. Centro, Colón 29000 Tuxtla Gutiérrez, Chiapas.</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <hr class="bg-white">
-                    <p class="mb-0 text-center">Síguenos en:</p>
-                    <div class="text-center">
-                        <a href="https://www.facebook.com" class="social-link"><i class="fab fa-facebook fa-2x"></i></a>
-                        <a href="https://www.instagram.com" class="social-link"><i class="fab fa-instagram fa-2x"></i></a>
-                        <a href="mailto:tucorreo@example.com" class="social-link"><i class="fas fa-envelope fa-2x"></i></a>
-                        <a href="tel:+1234567890" class="social-link text-white"><i class="fas fa-phone fa-2x"></i></a>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <hr class="bg-white">
+                <p class="mb-0 text-center">Síguenos en:</p>
+                <div class="text-center">
+                    <a href="https://www.facebook.com" class="social-link"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="https://www.instagram.com" class="social-link"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="mailto:tucorreo@example.com" class="social-link"><i class="fas fa-envelope fa-2x"></i></a>
+                    <a href="tel:+1234567890" class="social-link text-white"><i class="fas fa-phone fa-2x"></i></a>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
 <!-- End of Footer Section -->
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
