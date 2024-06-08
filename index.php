@@ -332,7 +332,7 @@
     </div>      
 </header>
 
-<section class="container-category">
+<section id="about" class="container-category">
         <!-- Producto 1 -->
         <div class="card-category">
             <div class="container-img">
@@ -489,10 +489,10 @@
                     <hr class="bg-white">
                     <p class="mb-0 text-center">Síguenos en:</p>
                     <div class="text-center">
-                        <a href="https://www.facebook.com" class="social-link"><i class="fab fa-facebook fa-2x"></i></a>
-                        <a href="https://www.instagram.com" class="social-link"><i class="fab fa-instagram fa-2x"></i></a>
-                        <a href="mailto:tucorreo@example.com" class="social-link"><i class="fas fa-envelope fa-2x"></i></a>
-                        <a href="tel:+1234567890" class="social-link text-white"><i class="fas fa-phone fa-2x"></i></a>
+                        <a href="https://www.facebook.com/ramtodecora" class="social-link"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="https://www.instagram.com/ramtodecora/" class="social-link"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="ramtosadecv@gmail.com" class="social-link"><i class="fas fa-envelope fa-2x"></i></a>
+                        <a href="(+52)961-613-8465 " class="social-link text-white"><i class="fas fa-phone fa-2x"></i></a>
         </div>
     </div>
 </footer>
