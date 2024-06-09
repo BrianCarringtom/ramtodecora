@@ -18,7 +18,7 @@
             height: 100vh;
             margin: 0;
             padding: 0;
-            background: #f5f5f5;
+            background: #f5f5f1;
             padding-top: 56px;
         }
 

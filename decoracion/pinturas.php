@@ -12,6 +12,7 @@
     <style>
         body {
             padding-top: 56px;
+            background: #f5f5f1;
         }
         .navbar-brand img {
             max-height: 40px;
