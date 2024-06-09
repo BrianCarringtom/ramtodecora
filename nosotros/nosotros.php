@@ -151,7 +151,7 @@
 <!-- End of Hours Section -->
 
    <!-- Footer -->
-   <footer class="footer">
+    <footer class="footer">
         <div class="container text-center">
             <div class="row">
                 <div class="col-md-4">
