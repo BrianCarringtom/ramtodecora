@@ -152,6 +152,7 @@
             cursor: pointer;
             margin-top: 10px;
         }
+        
     </style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="56">
@@ -206,7 +207,18 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="cart">
                         <h6 class="dropdown-header">Productos en el carrito</h6>
-                        <div id="cart-items"></div>
+                        <table class="table" id="cart-items-table">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Total</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cart-items"></tbody>
+                        </table>
                         <div class="dropdown-divider"></div>
                         <div class="dropdown-item-text">Total: $<span id="cart-total">0.00</span></div>
                     </div>
@@ -248,49 +260,29 @@
         <input type="text" id="searchInput" placeholder="Buscar...">
     </div>
 
-    <!-- Sección de Productos -->
-    <div class="container-products">
-        <div class="card-product" data-name="Producto 1" data-price="100">
-            <div class="container1-img">
-                <img src="../assets/alfombras2.jpg" alt="Producto 1">
-            </div>
-            <div class="content-product">
-                <h3>Producto 1</h3>
-                <p>Precio: $100</p>
-                <button class="btn btn-comprar" onclick="addToCart('Producto 1', 100)">Comprar</button>
-            </div>
+   <!-- Sección de Productos -->
+<div class="container-products">
+    <div class="card-product" data-name="Viniles 1" data-price="150">
+        <div class="container1-img">
+            <img src="../assets/alfombras2.jpg" alt="Viniles 1">
         </div>
-        <div class="card-product" data-name="Producto 2" data-price="200">
-            <div class="container1-img">
-                <img src="../assets/alfombras2.jpg" alt="Producto 2">
-            </div>
-            <div class="content-product">
-                <h3>Producto 2</h3>
-                <p>Precio: $200</p>
-                <button class="btn btn-comprar" onclick="addToCart('Producto 2', 200)">Comprar</button>
-            </div>
-        </div>
-        <div class="card-product" data-name="Producto 3" data-price="300">
-            <div class="container1-img">
-                <img src="../assets/alfombras2.jpg" alt="Producto 3">
-            </div>
-            <div class="content-product">
-                <h3>Producto 3</h3>
-                <p>Precio: $300</p>
-                <button class="btn btn-comprar" onclick="addToCart('Producto 3', 300)">Comprar</button>
-            </div>
-        </div>
-        <div class="card-product" data-name="Producto 4" data-price="400">
-            <div class="container1-img">
-                <img src="../assets/alfombras2.jpg" alt="Producto 4">
-            </div>
-            <div class="content-product">
-                <h3>Producto 4</h3>
-                <p>Precio: $400</p>
-                <button class="btn btn-comprar" onclick="addToCart('Producto 4', 400)">Comprar</button>
-            </div>
+        <div class="content-product">
+            <h3>Viniles 1</h3>
+            <p>Precio: $150</p>
+            <button class="btn btn-comprar" onclick="addToCart('Viniles 1', 150)">Comprar</button>
         </div>
     </div>
+    <div class="card-product" data-name="Viniles 2" data-price="250">
+        <div class="container1-img">
+            <img src="../assets/alfombras2.jpg" alt="Viniles 2">
+        </div>
+        <div class="content-product">
+            <h3>Viniles 2</h3>
+            <p>Precio: $250</p>
+            <button class="btn btn-comprar" onclick="addToCart('Viniles 2', 250)">Comprar</button>
+        </div>
+    </div>
+</div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -332,82 +324,120 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-    document.getElementById('searchInput').addEventListener('input', function() {
-        const searchTerm = this.value.toLowerCase();
-        const products = document.querySelectorAll('.card-product');
+   document.getElementById('searchInput').addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    const products = document.querySelectorAll('.card-product');
 
-        products.forEach(function(product) {
-            const title = product.querySelector('h3').textContent.toLowerCase();
-            if (title.includes(searchTerm)) {
-                product.style.display = 'block';
-            } else {
-                product.style.display = 'none';
-            }
-        });
+    products.forEach(function(product) {
+        const title = product.querySelector('h3').textContent.toLowerCase();
+        if (title.includes(searchTerm)) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
     });
+});
 
-    let cartCount = 0;
-    let cartItems = [];
-    let totalPrice = 0;
+let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-    function addToCart(productName, price) {
-        cartCount++;
-        document.getElementById('cart-count').innerText = cartCount;
-        cartItems.push({ name: productName, price: price });
-        totalPrice += price;
-        updateCartDropdown();
-        updateTotalPrice();
-        alert(productName + ' ha sido añadido al carrito.');
+function saveCart() {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+}
+
+function addToCart(productName, price) {
+    const existingItem = cartItems.find(item => item.name === productName);
+
+    if (existingItem) {
+        existingItem.quantity++;
+        existingItem.totalPrice += price;
+    } else {
+        cartItems.push({ name: productName, price: price, quantity: 1, totalPrice: price });
     }
 
-    function removeFromCart(productName, price) {
-        cartCount--;
-        document.getElementById('cart-count').innerText = cartCount;
-        cartItems = cartItems.filter(item => item.name !== productName);
-        totalPrice -= price;
-        updateCartDropdown();
-        updateTotalPrice();
+    updateCart();
+    saveCart();
+    alert(productName + ' ha sido añadido al carrito.');
+}
 
-        // Eliminar el elemento del DOM correspondiente al producto eliminado
-        const cartItemsContainer = document.getElementById('cart-items');
-        const items = cartItemsContainer.getElementsByClassName('cart-item');
-        for (let i = 0; i < items.length; i++) {
-            if (items[i].textContent.includes(productName)) {
-                cartItemsContainer.removeChild(items[i]);
-                break;
-            }
+function removeFromCart(productName, price) {
+    const existingItem = cartItems.find(item => item.name === productName);
+
+    if (existingItem) {
+        if (existingItem.quantity > 1) {
+            existingItem.quantity--;
+            existingItem.totalPrice -= price;
+        } else {
+            cartItems = cartItems.filter(item => item.name !== productName);
         }
     }
 
-    function updateCartDropdown() {
-        const cartItemsContainer = document.getElementById('cart-items');
-        cartItemsContainer.innerHTML = '';
+    updateCart();
+    saveCart();
+}
 
-        cartItems.forEach(function(item) {
-            const cartItemElement = document.createElement('div');
-            cartItemElement.classList.add('cart-item');
+function updateCart() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    cartItemsContainer.innerHTML = '';
 
-            const itemText = document.createElement('span');
-            itemText.textContent = item.name + ' - $' + item.price.toFixed(2);
-            cartItemElement.appendChild(itemText);
+    let totalPrice = 0;
+    let totalQuantity = 0;
 
-            const removeButton = document.createElement('button');
-            removeButton.textContent = 'Eliminar';
-            removeButton.classList.add('btn', 'btn-sm', 'btn-danger', 'btn-remove');
-            removeButton.addEventListener('click', function() {
-                removeFromCart(item.name, item.price);
-            });
-            cartItemElement.appendChild(removeButton);
+    cartItems.forEach(function(item) {
+        const row = document.createElement('tr');
+        row.classList.add('cart-item');
 
-            cartItemsContainer.appendChild(cartItemElement);
+        const nameCell = document.createElement('td');
+        nameCell.textContent = item.name;
+        row.appendChild(nameCell);
+
+        const priceCell = document.createElement('td');
+        priceCell.textContent = '$' + item.price.toFixed(2);
+        row.appendChild(priceCell);
+
+        const quantityCell = document.createElement('td');
+        quantityCell.textContent = item.quantity;
+        row.appendChild(quantityCell);
+
+        const totalCell = document.createElement('td');
+        totalCell.textContent = '$' + item.totalPrice.toFixed(2);
+        row.appendChild(totalCell);
+
+        const actionsCell = document.createElement('td');
+        
+        const incrementButton = document.createElement('button');
+        incrementButton.textContent = '+';
+        incrementButton.classList.add('btn', 'btn-sm', 'btn-success', 'mr-1');
+        incrementButton.addEventListener('click', function() {
+            addToCart(item.name, item.price);
         });
-    }
 
-    function updateTotalPrice() {
-        document.getElementById('cart-total').innerText = totalPrice.toFixed(2);
-        document.getElementById('cart-total-dropdown').innerText = totalPrice.toFixed(2);
-    }
+        const decrementButton = document.createElement('button');
+        decrementButton.textContent = '-';
+        decrementButton.classList.add('btn', 'btn-sm', 'btn-warning');
+        decrementButton.addEventListener('click', function() {
+            removeFromCart(item.name, item.price);
+        });
+
+        actionsCell.appendChild(incrementButton);
+        actionsCell.appendChild(decrementButton);
+        row.appendChild(actionsCell);
+
+        cartItemsContainer.appendChild(row);
+
+        totalPrice += item.totalPrice;
+        totalQuantity += item.quantity;
+    });
+
+    document.getElementById('cart-total').innerText = totalPrice.toFixed(2);
+    document.getElementById('cart-count').innerText = totalQuantity;
+}
+
+// Update cart on page load
+document.addEventListener('DOMContentLoaded', function() {
+    updateCart();
+});
 </script>
+
 
 </body>
 </html>
