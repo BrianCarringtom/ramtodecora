@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RAMTO Decoración - Soluciones en decoración y tapicería.">
     <meta name="author" content="Devcrud">
-    <title>RAMTO Decoración</title>
+    <title>Decoración</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -36,73 +36,103 @@
         .navbar-nav:hover {
             background-color: #343a40; /* Color de fondo al hacer hover */
         }
-
         /* Estilo para los elementos de navegación */
         .navbar-nav .nav-item .nav-link {
             transition: color 0.3s;
         }
-
         .navbar-nav .nav-item .nav-link:hover {
             color: #FF0000; /* Color de texto al hacer hover */
         }
-
         .nav-item.dropdown:hover .dropdown-menu {
             display: block;
+        }
+        /* Estilos para el carrusel */
+        #carrusel {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: black; /* Cambia el color de las flechas */
         }
     </style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="56">
 
- <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="assets/Logo.png" alt="Logo de RAMTO Decoración">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.php">INICIO</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="../decoracion/decoracion.php" id="navbarDecoracion" role="button">
-                        DECORACIÓN
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDecoracion">
-                        <a class="dropdown-item" href="../decoracion/decoracion.php">Cortinas y Persianas</a>
-                        <a class="dropdown-item" href="../decoracion/decoracion.php">Acabados</a>
-                        <a class="dropdown-item" href="../decoracion/decoracion.php">Pisos</a>
-                        <a class="dropdown-item" href="../decoracion/decoracion.php">Pinturas</a>
-                        <a class="dropdown-item" href="../decoracion/decoracion.php">Manteleria</a>
-                        <a class="dropdown-item" href="../decoracion/decoracion.php">Plantas</a>
-                        <a class="dropdown-item" href="../decoracion/decoracion.php">Exterior</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="../tapiceria/tapiceria.php" id="navbarTapiceria" role="button">
-                        TAPICERÍA
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarTapiceria">
-                        <a class="dropdown-item" href="../tapiceria/tapiceria.php">Alfombras</a>
-                        <a class="dropdown-item" href="../tapiceria/tapiceria.php">Viniles</a>
-                        <a class="dropdown-item" href="../tapiceria/tapiceria.php">Tapiceria</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../promociones/promociones.php">PROMOCIONES</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../nosotros/nosotros.php">NOSOTROS</a>
-                </li>
-            </ul>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/Logo.png" alt="Logo de RAMTO Decoración">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.php">INICIO</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="../decoracion/decoracion.php" id="navbarDecoracion" role="button">
+                            DECORACIÓN
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDecoracion">
+                            <a class="dropdown-item" href="../decoracion/decoracion.php">Cortinas y Persianas</a>
+                            <a class="dropdown-item" href="../decoracion/decoracion.php">Acabados</a>
+                            <a class="dropdown-item" href="../decoracion/decoracion.php">Pisos</a>
+                            <a class="dropdown-item" href="../decoracion/decoracion.php">Pinturas</a>
+                            <a class="dropdown-item" href="../decoracion/decoracion.php">Manteleria</a>
+                            <a class="dropdown-item" href="../decoracion/decoracion.php">Plantas</a>
+                            <a class="dropdown-item" href="../decoracion/decoracion.php">Exterior</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="../tapiceria/tapiceria.php" id="navbarTapiceria" role="button">
+                            TAPICERÍA
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarTapiceria">
+                            <a class="dropdown-item" href="../tapiceria/tapiceria.php">Alfombras</a>
+                            <a class="dropdown-item" href="../tapiceria/tapiceria.php">Viniles</a>
+                            <a class="dropdown-item" href="../tapiceria/tapiceria.php">Tapiceria</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../promociones/promociones.php">PROMOCIONES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../nosotros/nosotros.php">NOSOTROS</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carrusel de Imágenes -->
+    <div id="carrusel" class="container">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="fondo1.jpg" class="d-block w-50 mx-auto" alt="Imagen 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="fondo1.jpg" class="d-block w-50 mx-auto" alt="Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="fondo1.jpg" class="d-block w-50 mx-auto" alt="Imagen 3">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
         </div>
     </div>
-</nav>
-
-
+    <!-- Fin del Carrusel de Imágenes -->
 
     <!-- Footer Section -->
     <footer class="footer">
@@ -133,15 +163,16 @@
                         <a href="https://www.instagram.com" class="social-link"><i class="fab fa-instagram fa-2x"></i></a>
                         <a href="mailto:tucorreo@example.com" class="social-link"><i class="fas fa-envelope fa-2x"></i></a>
                         <a href="tel:+1234567890" class="social-link text-white"><i class="fas fa-phone fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</footer>
-<!-- End of Footer Section -->
+    </footer>
+    <!-- End of Footer Section -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 
 </body>
 </html>
