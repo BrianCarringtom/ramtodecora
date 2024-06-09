@@ -274,41 +274,40 @@
     </div>
 </div>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="row justify-content-between align-items-center text-center">
-                <div class="col-md-3 mb-3 mb-md-0">
-                    <img src="../assets/Logo.png" width="100" alt="Logo de RAMTO Decoración">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: info@ramtodecoracion.com</li>
+                        <li>Tel: 123-456-7890</li>
+                        <li>Dirección: Av. Ejemplo 123, Ciudad</li>
+                    </ul>
                 </div>
-                <div class="col-md-9">
-                    <div class="row justify-content-center">
-                        <div class="col-md-4 mb-3">
-                            <h5 class="font-weight-bold">Nuestra Empresa</h5>
-                            <p>Somos una empresa comercializadora, diseñadora y productora de artículos de decoración, limpieza y recubrimiento de teflón para el cuidado de los tapices.</p>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <h5 class="font-weight-bold">Dirección</h5>
-                            <p>7 A. Pte. Nte. 646 Col. Centro, Colón 29000 Tuxtla Gutiérrez, Chiapas.</p>
-                        </div>
-                    </div>
+                <div class="col-md-4">
+                    <h5>Redes Sociales</h5>
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Boletín</h5>
+                    <p>Suscríbete a nuestro boletín para recibir ofertas especiales y noticias.</p>
+                    <form action="#">
+                        <input type="email" placeholder="Tu email" class="form-control">
+                        <button type="submit" class="btn btn-primary mt-2">Suscribirse</button>
+                    </form>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <hr class="bg-white">
-                    <p class="mb-0 text-center">Síguenos en:</p>
-                    <div class="text-center">
-                        <a href="https://www.facebook.com" class="social-link"><i class="fab fa-facebook fa-2x"></i></a>
-                        <a href="https://www.instagram.com" class="social-link"><i class="fab fa-instagram fa-2x"></i></a>
-                        <a href="mailto:tucorreo@example.com" class="social-link"><i class="fas fa-envelope fa-2x"></i></a>
-                        <a href="tel:+1234567890" class="social-link text-white"><i class="fas fa-phone fa-2x"></i></a>
-                    </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <p class="m-0">&copy; 2023 RAMTO Decoración. Todos los derechos reservados.</p>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- End of Footer Section -->
 
 <!-- Scripts -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
