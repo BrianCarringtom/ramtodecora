@@ -49,6 +49,10 @@
         .nav-item.dropdown:hover .dropdown-menu {
             display: block;
         }
+        .dropdown-item:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Cambia el color de fondo al pasar el cursor sobre el elemento */
+            color: red !important; /* Cambia el color del texto al pasar el cursor sobre el elemento */
+        }
     </style>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="56">
@@ -57,7 +61,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="assets/Logo.png" alt="Logo de RAMTO Decoración">
+            <img src="../assets/Logo.png" alt="Logo de RAMTO Decoración">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

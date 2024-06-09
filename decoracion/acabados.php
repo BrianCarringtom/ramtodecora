@@ -47,6 +47,11 @@
             display: block;
         }
 
+        .dropdown-item:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Cambia el color de fondo al pasar el cursor sobre el elemento */
+            color: red !important; /* Cambia el color del texto al pasar el cursor sobre el elemento */
+        }
+        
         /* Estilos para el carrusel */
         #carrusel {
             margin-top: 20px;
