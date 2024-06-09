@@ -50,6 +50,15 @@
             color: white !important;
         }
 
+        .navbar-nav .nav-link:hover {
+            color: red !important; /* Cambia el color al pasar el cursor sobre el enlace */
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(255, 255, 255, 0.1); /* Cambia el color de fondo al pasar el cursor sobre el elemento */
+            color: red !important; /* Cambia el color del texto al pasar el cursor sobre el elemento */
+        }
+
         /* Estilos de Header */
         .header {
             position: relative;
@@ -314,13 +323,13 @@
                         DECORACIÓN
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDecoracion">
-                        <a class="dropdown-item" href="decoracion/decoracion.php">Cortinas y Persianas</a>
-                        <a class="dropdown-item" href="decoracion/decoracion.php">Acabados</a>
-                        <a class="dropdown-item" href="decoracion/decoracion.php">Pisos</a>
-                        <a class="dropdown-item" href="decoracion/decoracion.php">Pinturas</a>
-                        <a class="dropdown-item" href="decoracion/decoracion.php">Manteleria</a>
-                        <a class="dropdown-item" href="decoracion/decoracion.php">Plantas</a>
-                        <a class="dropdown-item" href="decoracion/decoracion.php">Exterior</a>
+                        <a class="dropdown-item" href="decoracion/cortinasypercianas.php">Cortinas y Persianas</a>
+                        <a class="dropdown-item" href="decoracion/acabados.php">Acabados</a>
+                        <a class="dropdown-item" href="decoracion/pisos.php">Pisos</a>
+                        <a class="dropdown-item" href="decoracion/pinturas.php">Pinturas</a>
+                        <a class="dropdown-item" href="decoracion/mantelerias.php">Manteleria</a>
+                        <a class="dropdown-item" href="decoracion/plantas.php">Plantas</a>
+                        <a class="dropdown-item" href="decoracion/exterior.php">Exterior</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -328,8 +337,8 @@
                         TAPICERÍA
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarTapiceria">
-                        <a class="dropdown-item" href="tapiceria/tapiceria.php">Alfombras</a>
-                        <a class="dropdown-item" href="tapiceria/tapiceria.php">Viniles</a>
+                        <a class="dropdown-item" href="tapiceria/alfombras.php">Alfombras</a>
+                        <a class="dropdown-item" href="tapiceria/viniles.php">Viniles</a>
                         <a class="dropdown-item" href="tapiceria/tapiceria.php">Tapiceria</a>
                     </div>
                 </li>
@@ -363,7 +372,7 @@
             </div>
             <div class="content-card-category">
                 <h3>Plantas</h3>
-                <a class="btn-view-more" href="./Plantas.html">Ver más..</a>
+                <a class="btn-view-more" href="decoracion/plantas.php">Ver más..</a>
             </div>
         </div>
 
@@ -374,7 +383,7 @@
             </div>
             <div class="content-card-category">
                 <h3>Cortinas y Persianas</h3>
-                <a class="btn-view-more" href="./Cortinas_y_persianas.html">Ver más..</a>
+                <a class="btn-view-more" href="decoracion/cortinasypercianas.php">Ver más..</a>
             </div>
         </div>
 
@@ -385,7 +394,7 @@
             </div>
             <div class="content-card-category">
                 <h3>Alfombras</h3>
-                <a class="btn-view-more" href="./Alfombras.html">Ver más..</a>
+                <a class="btn-view-more" href="tapiceria/alfombras.php">Ver más..</a>
             </div>
         </div>
 
@@ -396,7 +405,7 @@
             </div>
             <div class="content-card-category">
                 <h3>Exterior</h3>
-                <a class="btn-view-more" href="./Exterior.html">Ver más..</a>
+                <a class="btn-view-more" href="decoracion/exterior.php">Ver más..</a>
             </div>
         </div>
     </section>

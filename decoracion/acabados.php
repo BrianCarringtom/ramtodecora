@@ -46,6 +46,7 @@
         .nav-item.dropdown:hover .dropdown-menu {
             display: block;
         }
+
         /* Estilos para el carrusel */
         #carrusel {
             margin-top: 20px;
