@@ -265,6 +265,9 @@
               <div class="dropdown-item-text">
                 Total: $<span id="cart-total">0.00</span>
               </div>
+              <div class="d-flex justify-content-end mr-3"> <!-- Contenedor adicional para alinear el botón a la derecha -->
+                <button class="btn btn-primary ml-auto" id="checkout-btn">Pagar</button>
+              </div>
             </div>
           </li>
         </ul>
@@ -511,6 +514,40 @@
     // Update cart on page load
     document.addEventListener("DOMContentLoaded", function() {
       updateCart();
+    });
+  </script>
+
+  <!-- Modal de opciones de pago -->
+  <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="paymentModalLabel">Opciones de Pago</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Seleccione su método de pago preferido:</p>
+          <ul>
+            <li><a href="https://www.santander.com.mx/" target="_blank">Pagar con Banco Santander</a></li>
+            <li><a href="https://www.banorte.com/" target="_blank">Pagar con Banorte</a></li>
+            <li><a href="https://www.bancomer.com/" target="_blank">Pagar con Bancomer</a></li>
+            <!-- Agrega más opciones de pago según sea necesario -->
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Agrega un evento click al botón de pago para abrir el modal de opciones de pago
+    document.getElementById('checkout-btn').addEventListener('click', function() {
+      $('#paymentModal').modal('show'); // Abre el modal usando jQuery
     });
   </script>
 </body>
