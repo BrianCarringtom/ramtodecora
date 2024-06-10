@@ -172,8 +172,8 @@
                     <h2>Horarios</h2>
                 </div>
                 <div class="col-md-12 section-content">
-                    <p class="text-center"><strong>Lunes a Viernes:</strong> 9:00 am - 6:00 pm</p>
-                    <p class="text-center"><strong>Sábados:</strong> 9:00 am - 2:00 pm</p>
+                    <p class="text-center"><strong>Lunes a Viernes:</strong> 8:30 - 14:00 y 16:00 - 19:00</p>
+                    <p class="text-center"><strong>Sábados:</strong> 8:30 - 14:00</p>
                     <p class="text-center"><strong>Domingos:</strong> Cerrado</p>
                 </div>
             </div>
