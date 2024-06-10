@@ -444,6 +444,8 @@
                 addToCart(item.name, item.price);
             });
 
+            incrementButton.style.marginRight = '5px'; // Ajusta el margen entre el botón "+" y el botón "-"
+            
             const decrementButton = createButton('-', 'btn-warning', function() {
                 removeFromCart(item.name, item.price);
             });
