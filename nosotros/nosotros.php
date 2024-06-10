@@ -104,13 +104,13 @@
                             DECORACIÓN
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDecoracion">
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Cortinas y Persianas</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Acabados</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Pisos</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Pinturas</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Mantelería</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Plantas</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Exterior</a>
+                            <a class="dropdown-item" href="../decoracion/cortinas.php">Cortinas y Persianas</a>
+                            <a class="dropdown-item" href="../decoracion/acabados.php">Acabados</a>
+                            <a class="dropdown-item" href="../decoracion/pisos.php">Pisos</a>
+                            <a class="dropdown-item" href="../decoracion/pinturas.php">Pinturas</a>
+                            <a class="dropdown-item" href="../decoracion/manteleria.php">Mantelería</a>
+                            <a class="dropdown-item" href="../decoracion/plantas.php">Plantas</a>
+                            <a class="dropdown-item" href="../decoracion/exterior.php">Exterior</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -118,9 +118,9 @@
                             TAPICERÍA
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarTapiceria">
-                            <a class="dropdown-item" href="../tapiceria/tapiceria.php">Alfombras</a>
-                            <a class="dropdown-item" href="../tapiceria/tapiceria.php">Vinilos</a>
-                            <a class="dropdown-item" href="../tapiceria/tapiceria.php">Tapicería</a>
+                            <a class="dropdown-item" href="../tapiceria/alfombras.php">Alfombras</a>
+                            <a class="dropdown-item" href="../tapiceria/vinilos.php">Vinilos</a>
+                            <a class="dropdown-item" href="../tapiceria/tapiceria-general.php">Tapicería General</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -139,7 +139,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center section-title">
-                    <h2>Misión</h2>
+                    <h2><i class="fas fa-user"></i> Misión</h2>
                 </div>
                 <div class="col-md-12 section-content">
                     <p class="text-center">Te brindamos soluciones de decoración con nuestra amplia variedad de cortinas, telas decorativas, tapices, alfombras, tapetes y accesorios decorativos.</p>
@@ -149,12 +149,12 @@
     </section>
     <!-- End of Mission Section -->
 
-    <!-- Vision Section -->
+    <!-- Visión Section -->
     <section id="vision" class="section bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center section-title">
-                    <h2>Visión</h2>
+                    <h2><i class="fas fa-eye"></i> Visión</h2>
                 </div>
                 <div class="col-md-12 section-content">
                     <p class="text-center">Somos una empresa comercializadora, diseñadora y productora de artículos de decoración entre los que destacan textiles decorativos para uso interior y exterior. Contamos con un sistema integral de servicios que complementan nuestros productos, como la limpieza y el recubrimiento de teflón para el cuidado de los tapices.</p>
@@ -164,22 +164,24 @@
     </section>
     <!-- End of Vision Section -->
 
-    <!-- Hours Section -->
+    <!-- Horarios Section -->
     <section id="horarios" class="section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center section-title">
-                    <h2>Horarios</h2>
+                    <h2><i class="far fa-clock"></i> Horarios</h2>
                 </div>
                 <div class="col-md-12 section-content">
                     <p class="text-center"><strong>Lunes a Viernes:</strong> 8:30 - 14:00 y 16:00 - 19:00</p>
                     <p class="text-center"><strong>Sábados:</strong> 8:30 - 14:00</p>
                     <p class="text-center"><strong>Domingos:</strong> Cerrado</p>
+                    <div id="reloj" class="text-center"></div> <!-- Aquí se mostrará el reloj -->
                 </div>
             </div>
         </div>
     </section>
-    <!-- End of Hours Section -->
+    <!-- End of Horarios Section -->
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -215,8 +217,34 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Función para obtener la fecha y hora actualizada
+        function actualizarReloj() {
+            var fechaHora = new Date();
+            var horas = fechaHora.getHours();
+            var minutos = fechaHora.getMinutes();
+            var segundos = fechaHora.getSeconds();
 
+            // Formateo para asegurar que siempre haya dos dígitos
+            horas = (horas < 10) ? "0" + horas : horas;
+            minutos = (minutos < 10) ? "0" + minutos : minutos;
+            segundos = (segundos < 10) ? "0" + segundos : segundos;
+
+            // Construir el string con la hora
+            var horaActual = horas + ":" + minutos + ":" + segundos;
+
+            // Actualizar el contenido del elemento con id "reloj"
+            document.getElementById("reloj").innerHTML = "<strong>Fecha y Hora:</strong> " + fechaHora.toLocaleDateString() + " " + horaActual;
+
+            // Llamar a esta función nuevamente cada segundo para actualizar el reloj
+            setTimeout(actualizarReloj, 1000);
+        }
+
+        // Llamar a la función para que comience a actualizar el reloj
+        actualizarReloj();
+    </script>
 
 </body>
+
 </html>
