@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RAMTO Decoración - Soluciones en decoración y tapicería.">
     <meta name="author" content="Devcrud">
-    <title>Promociones</title>
+    <title>Detalles de la Promoción</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -23,53 +23,61 @@
         .section-title {
             margin-top: 60px;
             margin-bottom: 30px;
-            text-align: center;
         }
 
-        .promocion {
-            border: 1px solid #ddd;
-            border-radius: 5px;
+        .detalle-promocion {
+            max-width: 1200px;
+            margin: 50px auto;
             padding: 20px;
-            margin-bottom: 20px;
             background-color: #fff;
-            transition: all 0.3s ease;
-        }
-
-        .promocion:hover {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
-        .promocion img {
-            width: 100%;
+        .detalle-promocion img {
+            max-width: 100%;
+            /* Ajuste para hacer la imagen responsive */
             height: auto;
+            display: block;
+            margin: 20px auto;
         }
 
-        .promocion h3 {
-            margin-top: 20px;
-            margin-bottom: 10px;
+        .detalle-promocion h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
         }
 
-        .promocion p {
-            margin-bottom: 10px;
-        }
-
-        .promocion .price {
+        .price {
+            margin: 0;
             font-size: 18px;
+            display: flex;
+            align-items: center;
         }
 
         .original-price {
             text-decoration: line-through;
             color: #999;
+            margin-right: 10px;
         }
 
         .discounted-price {
             color: #e60000;
             font-weight: bold;
-            margin-left: 10px;
+            margin-right: 10px;
         }
 
-        .ver-mas-btn {
-            display: inline-block;
+        .discount-percentage {
+            background-color: #ffeb3b;
+            color: #000;
+            padding: 2px 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .volver-btn {
+            align-self: flex-start;
             padding: 10px 20px;
             background-color: #007bff;
             color: #fff;
@@ -80,8 +88,17 @@
             transition: background-color 0.3s ease;
         }
 
-        .ver-mas-btn:hover {
+        .volver-btn:hover {
             background-color: rgba(0, 86, 179, 0.7);
+            color: #fff;
+        }
+
+        .detalle-promocion img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
         }
 
         .footer {
@@ -159,48 +176,14 @@
         </div>
     </nav>
 
-    <!-- Promociones Section -->
-    <section class="container mt-5">
-        <h2 class="section-title">PROMOCIONES ESPECIALES</h2>
-        <div class="row">
-            <!-- Promoción 1 -->
-            <div class="col-md-4">
-                <div class="promocion">
-                    <img src="images/promo1.png" alt="Promoción 1">
-                    <h3>Descuento del 20% en Electrónica</h3>
-                    <p class="price"><span class="original-price">$100.00</span>
-                        <span class="discounted-price">$75.00</span>
-                        <span class="discount-percentage">25%</span>
-                    <p>Aprovecha un 20% de descuento en todos los productos electrónicos. ¡No te lo pierdas!.</p>
-                    <a href="detalles.php?promoId=1" class="ver-mas-btn">Ver más</a>
-                </div>
-            </div>
-            <!-- Promoción 2 -->
-            <div class="col-md-4">
-                <div class="promocion">
-                    <img src="images/promo1.png" alt="Promoción 2">
-                    <h3>2x1 en Ropa</h3>
-                    <p class="price"><span class="original-price">$200.00</span>
-                        <span class="discounted-price">$150.00</span>
-                        <span class="discount-percentage">25%</span>
-                    <p>Compra una prenda y llévate otra gratis. ¡Renueva tu armario hoy mismo!.</p>
-                    <a href="detalles.php?promoId=2" class="ver-mas-btn">Ver más</a>
-                </div>
-            </div>
-            <!-- Promoción 3 -->
-            <div class="col-md-4">
-                <div class="promocion">
-                    <img src="images/promo1.png" alt="Promoción 3">
-                    <h3>Envío Gratis en Compras Mayores a $50</h3>
-                    <p class="price"><span class="original-price">$500.00</span>
-                        <span class="discounted-price">$250.00</span>
-                        <span class="discount-percentage">50%</span>
-                    <p>Obtén envío gratis en todas tus compras superiores a $50. ¡Aprovecha ya!.</p>
-                    <a href="detalles.php?promoId=3" class="ver-mas-btn">Ver más</a>
-                </div>
-            </div>
-            <!-- Agregar más promociones aquí según sea necesario -->
-        </div>
+    <section class="detalle-promocion">
+        <h2 id="promo-title">Título de la Promoción</h2>
+        <img id="promo-image" src="" alt="Imagen de la Promoción">
+        <p id="promo-description">Descripción de la Promoción</p>
+        <p class="price"><span id="original-price" class="original-price"></span> <span id="discounted-price" class="discounted-price"></span> <span id="discount-percentage" class="discount-percentage"></span></p>
+        <p id="promo-validity">Fecha de validez</p>
+        <p class="current-date"></p>
+        <a href="promociones.php" class="volver-btn">Volver a las promociones</a>
     </section>
 
     <!-- Footer -->
@@ -234,10 +217,72 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Obtener parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const promoId = urlParams.get('promoId');
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        // Datos simulados de promociones
+        const promociones = {
+            1: {
+                title: 'Descuento del 20% en Electrónica',
+                image: 'images/promo1.png',
+                description: 'Aprovecha un 20% de descuento en todos los productos electrónicos. ¡No te lo pierdas!.',
+                originalPrice: '$100.00',
+                discountedPrice: '$75.00',
+                discountPercentage: '25%',
+                validity: 'Válido hasta el 30 de junio de 2024.'
+            },
+            2: {
+                title: '2x1 en Ropa',
+                image: 'images/promo1.png',
+                description: 'Compra una prenda y llévate otra gratis. ¡Renueva tu armario hoy mismo!.',
+                originalPrice: '$200.00',
+                discountedPrice: '$150.00',
+                discountPercentage: '25%',
+                validity: 'Válido hasta el 30 de junio de 2024.'
+            },
+            3: {
+                title: 'Envío Gratis en Compras Mayores a $50',
+                image: 'images/promo1.png',
+                description: 'Obtén envío gratis en todas tus compras superiores a $50. ¡Aprovecha ya.',
+                originalPrice: '$500.00',
+                discountedPrice: '$250.00',
+                discountPercentage: '50%',
+                validity: 'Válido hasta el 30 de junio de 2024.'
+            },
+            // Agregar más promociones según sea necesario
+        };
+
+        // Mostrar la promoción correspondiente
+        if (promociones[promoId]) {
+            const promo = promociones[promoId];
+            document.getElementById('promo-title').innerText = promo.title;
+            document.getElementById('promo-image').src = promo.image;
+            document.getElementById('promo-description').innerText = promo.description;
+            document.getElementById('original-price').innerText = promo.originalPrice;
+            document.getElementById('discounted-price').innerText = promo.discountedPrice;
+            document.getElementById('discount-percentage').innerText = promo.discountPercentage;
+            document.getElementById('promo-validity').innerText = promo.validity;
+        } else {
+            document.getElementById('promo-title').innerText = 'Promoción no encontrada';
+        }
+
+        // Función para mostrar la fecha actual
+        function mostrarFechaActual() {
+            const currentDate = new Date();
+            const options = {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
+            const formattedDate = currentDate.toLocaleDateString('es-ES', options);
+            document.querySelector('.current-date').innerText = `Fecha actual: ${formattedDate}`;
+        }
+
+        // Mostrar la fecha actual
+        mostrarFechaActual();
+    </script>
 </body>
 
 </html>
