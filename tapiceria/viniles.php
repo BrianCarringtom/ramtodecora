@@ -264,10 +264,16 @@
                             </table>
                             <div class="dropdown-divider"></div>
                             <div class="dropdown-item-text">Total: $<span id="cart-total">0.00</span></div>
-                            <div class="d-flex justify-content-end mr-3"> <!-- Contenedor adicional para alinear el botón a la derecha -->
+                            <div class="d-flex justify-content-end mr-3">
                                 <button class="btn btn-primary ml-auto" id="checkout-btn">Pagar</button>
                             </div>
+                            <div class="pagination-controls text-center mt-3">
+                                <button class="btn btn-secondary btn-sm" id="prev-page">Anterior</button>
+                                <span id="page-info">Página 1</span>
+                                <button class="btn btn-secondary btn-sm" id="next-page">Siguiente</button>
+                            </div>
                         </div>
+
                     </li>
                 </ul>
             </div>
@@ -367,39 +373,43 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCart();
+            renderCartItems();
+        });
+
         document.getElementById('searchInput').addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
+            const searchTerm = this.value.trim().toLowerCase();
             const products = document.querySelectorAll('.card-product');
 
             products.forEach(function(product) {
-                const title = product.querySelector('h3').textContent.toLowerCase();
-                if (title.includes(searchTerm)) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
+                const title = product.querySelector('h3').textContent.trim().toLowerCase();
+                product.style.display = title.includes(searchTerm) ? 'block' : 'none';
             });
         });
 
         let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        let currentPage = 1;
+        const itemsPerPage = 4;
 
         function saveCart() {
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
         }
 
         function addToCart(productName, price) {
-            const existingItem = cartItems.find(item => item.name === productName);
+            let existingItem = cartItems.find(item => item.name === productName);
 
             if (existingItem) {
                 existingItem.quantity++;
                 existingItem.totalPrice += price;
             } else {
-                cartItems.push({
+                existingItem = {
                     name: productName,
                     price: price,
                     quantity: 1,
                     totalPrice: price
-                });
+                };
+                cartItems.push(existingItem);
             }
 
             updateCart();
@@ -408,14 +418,15 @@
         }
 
         function removeFromCart(productName, price) {
-            const existingItem = cartItems.find(item => item.name === productName);
+            const existingItemIndex = cartItems.findIndex(item => item.name === productName);
 
-            if (existingItem) {
+            if (existingItemIndex !== -1) {
+                const existingItem = cartItems[existingItemIndex];
                 if (existingItem.quantity > 1) {
                     existingItem.quantity--;
                     existingItem.totalPrice -= price;
                 } else {
-                    cartItems = cartItems.filter(item => item.name !== productName);
+                    cartItems.splice(existingItemIndex, 1);
                 }
             }
 
@@ -423,55 +434,65 @@
             saveCart();
         }
 
-        function updateCart() {
+        function renderCartItem(item) {
+            const row = document.createElement('tr');
+            row.classList.add('cart-item');
+
+            ['name', 'price', 'quantity', 'totalPrice'].forEach(property => {
+                const cell = document.createElement('td');
+                if (property === 'price' || property === 'totalPrice') {
+                    cell.textContent = '$' + item[property].toFixed(2);
+                } else {
+                    cell.textContent = item[property];
+                }
+                row.appendChild(cell);
+            });
+
+            const actionsCell = document.createElement('td');
+
+            const incrementButton = createButton('+', 'btn-success', function() {
+                addToCart(item.name, item.price);
+            });
+
+            const decrementButton = createButton('-', 'btn-warning', function() {
+                removeFromCart(item.name, item.price);
+            });
+
+            actionsCell.appendChild(incrementButton);
+            actionsCell.appendChild(decrementButton);
+            row.appendChild(actionsCell);
+
+            return row;
+        }
+
+        function createButton(text, className, onClick) {
+            const button = document.createElement('button');
+            button.textContent = text;
+            button.classList.add('btn', 'btn-sm', className);
+            button.addEventListener('click', onClick);
+            return button;
+        }
+
+        function renderCartItems() {
             const cartItemsContainer = document.getElementById('cart-items');
             cartItemsContainer.innerHTML = '';
 
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedItems = cartItems.slice(start, end);
+
+            paginatedItems.forEach(function(item) {
+                cartItemsContainer.appendChild(renderCartItem(item));
+            });
+
+            document.getElementById('page-info').innerText = `Página ${currentPage}`;
+        }
+
+        function updateCartTotal() {
             let totalPrice = 0;
             let totalQuantity = 0;
 
             cartItems.forEach(function(item) {
-                const row = document.createElement('tr');
-                row.classList.add('cart-item');
-
-                const nameCell = document.createElement('td');
-                nameCell.textContent = item.name;
-                row.appendChild(nameCell);
-
-                const priceCell = document.createElement('td');
-                priceCell.textContent = '$' + item.price.toFixed(2);
-                row.appendChild(priceCell);
-
-                const quantityCell = document.createElement('td');
-                quantityCell.textContent = item.quantity;
-                row.appendChild(quantityCell);
-
-                const totalCell = document.createElement('td');
-                totalCell.textContent = '$' + item.totalPrice.toFixed(2);
-                row.appendChild(totalCell);
-
-                const actionsCell = document.createElement('td');
-
-                const incrementButton = document.createElement('button');
-                incrementButton.textContent = '+';
-                incrementButton.classList.add('btn', 'btn-sm', 'btn-success', 'mr-1');
-                incrementButton.addEventListener('click', function() {
-                    addToCart(item.name, item.price);
-                });
-
-                const decrementButton = document.createElement('button');
-                decrementButton.textContent = '-';
-                decrementButton.classList.add('btn', 'btn-sm', 'btn-warning');
-                decrementButton.addEventListener('click', function() {
-                    removeFromCart(item.name, item.price);
-                });
-
-                actionsCell.appendChild(incrementButton);
-                actionsCell.appendChild(decrementButton);
-                row.appendChild(actionsCell);
-
-                cartItemsContainer.appendChild(row);
-
                 totalPrice += item.totalPrice;
                 totalQuantity += item.quantity;
             });
@@ -480,9 +501,25 @@
             document.getElementById('cart-count').innerText = totalQuantity;
         }
 
-        // Update cart on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            updateCart();
+        function updateCart() {
+            renderCartItems();
+            updateCartTotal();
+            saveCart();
+        }
+
+        document.getElementById('prev-page').addEventListener('click', function() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderCartItems();
+            }
+        });
+
+        document.getElementById('next-page').addEventListener('click', function() {
+            const totalPages = Math.ceil(cartItems.length / itemsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderCartItems();
+            }
         });
     </script>
 
