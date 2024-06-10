@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,17 +30,19 @@
         }
 
         .bg-custom {
-            background:linear-gradient(30deg, royalblue, red);
+            background: linear-gradient(30deg, royalblue, red);
         }
 
         /* Estilos de Navegación */
         .nav-first {
-            background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Fondo semi-transparente */
             padding: 10px 0;
         }
 
         .nav-second {
-            background-color: rgba(0, 0, 0, 0.9); /* Fondo más oscuro */
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Fondo más oscuro */
         }
 
         .navbar-brand img {
@@ -51,12 +54,15 @@
         }
 
         .navbar-nav .nav-link:hover {
-            color: red !important; /* Cambia el color al pasar el cursor sobre el enlace */
+            color: red !important;
+            /* Cambia el color al pasar el cursor sobre el enlace */
         }
 
         .dropdown-item:hover {
-            background-color: rgba(255, 255, 255, 0.1); /* Cambia el color de fondo al pasar el cursor sobre el elemento */
-            color: red !important; /* Cambia el color del texto al pasar el cursor sobre el elemento */
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Cambia el color de fondo al pasar el cursor sobre el elemento */
+            color: red !important;
+            /* Cambia el color del texto al pasar el cursor sobre el elemento */
         }
 
         /* Estilos de Header */
@@ -77,7 +83,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fondo semi-transparente */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -155,7 +162,7 @@
             flex-direction: column;
             gap: 4rem;
             padding-top: 60px;
-            
+
         }
 
         .card-product {
@@ -168,11 +175,13 @@
             background: #fff;
             border-radius: 0 0 20px 20px;
             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease; /* Animación de transición en la propiedad transform */
+            transition: transform 0.3s ease;
+            /* Animación de transición en la propiedad transform */
         }
 
         .card-product:hover {
-            transform: translateY(-5px); /* Aplicar una ligera elevación al pasar el cursor sobre el elemento */
+            transform: translateY(-5px);
+            /* Aplicar una ligera elevación al pasar el cursor sobre el elemento */
         }
 
         .card-product .container1-img {
@@ -206,7 +215,8 @@
 
         .card-category {
             background: #fff;
-            border-radius: 0 25px 25px 25px; /* Establece el radio de borde para cada esquina */
+            border-radius: 0 25px 25px 25px;
+            /* Establece el radio de borde para cada esquina */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             width: 200px;
             text-align: center;
@@ -244,7 +254,8 @@
             margin: 0 0 10px;
             font-size: 18px;
             color: #000000;
-            font-weight: 400; /* Elimina la negrita */
+            font-weight: 400;
+            /* Elimina la negrita */
         }
 
         .btn-view-more {
@@ -273,8 +284,10 @@
         }
 
         /* Estilos del Footer */
-        .footer, .py-4 {
-            background-color: #343a40; /* Fondo oscuro */
+        .footer,
+        .py-4 {
+            background-color: #343a40;
+            /* Fondo oscuro */
             color: white;
             padding-top: 40px;
             padding-bottom: 20px;
@@ -284,7 +297,8 @@
             color: white;
             margin-right: 15px;
             text-decoration: none;
-            margin-left: 20px; /* Add some spacing between links */
+            margin-left: 20px;
+            /* Add some spacing between links */
         }
 
         .social-link i {
@@ -299,76 +313,119 @@
             display: block;
         }
 
+        /* Estilos del ícono de WhatsApp */
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-icon i {
+            font-size: 24px;
+        }
+
+        /* Animación burbujeante */
+        .whatsapp-icon.bounce {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
     </style>
-    
+
 </head>
+
 <body data-spy="scroll" data-target=".navbar" data-offset="56">
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="assets/Logo.png" alt="Logo de RAMTO Decoración">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">INICIO</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="decoracion/decoracion.php" id="navbarDecoracion" role="button">
-                        DECORACIÓN
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDecoracion">
-                        <a class="dropdown-item" href="decoracion/cortinasypercianas.php">Cortinas y Persianas</a>
-                        <a class="dropdown-item" href="decoracion/acabados.php">Acabados</a>
-                        <a class="dropdown-item" href="decoracion/pisos.php">Pisos</a>
-                        <a class="dropdown-item" href="decoracion/pinturas.php">Pinturas</a>
-                        <a class="dropdown-item" href="decoracion/mantelerias.php">Manteleria</a>
-                        <a class="dropdown-item" href="decoracion/plantas.php">Plantas</a>
-                        <a class="dropdown-item" href="decoracion/exterior.php">Exterior</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="tapiceria/tapiceria.php" id="navbarTapiceria" role="button">
-                        TAPICERÍA
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarTapiceria">
-                        <a class="dropdown-item" href="tapiceria/alfombras.php">Alfombras</a>
-                        <a class="dropdown-item" href="tapiceria/viniles.php">Viniles</a>
-                        <a class="dropdown-item" href="tapiceria/tapiceria.php">Tapiceria</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="promociones/promociones.php">PROMOCIONES</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="nosotros/nosotros.php">NOSOTROS</a>
-                </li>
-            </ul>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="assets/Logo.png" alt="Logo de RAMTO Decoración">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">INICIO</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="decoracion/decoracion.php" id="navbarDecoracion" role="button">
+                            DECORACIÓN
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDecoracion">
+                            <a class="dropdown-item" href="decoracion/cortinasypercianas.php">Cortinas y Persianas</a>
+                            <a class="dropdown-item" href="decoracion/acabados.php">Acabados</a>
+                            <a class="dropdown-item" href="decoracion/pisos.php">Pisos</a>
+                            <a class="dropdown-item" href="decoracion/pinturas.php">Pinturas</a>
+                            <a class="dropdown-item" href="decoracion/mantelerias.php">Manteleria</a>
+                            <a class="dropdown-item" href="decoracion/plantas.php">Plantas</a>
+                            <a class="dropdown-item" href="decoracion/exterior.php">Exterior</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="tapiceria/tapiceria.php" id="navbarTapiceria" role="button">
+                            TAPICERÍA
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarTapiceria">
+                            <a class="dropdown-item" href="tapiceria/alfombras.php">Alfombras</a>
+                            <a class="dropdown-item" href="tapiceria/viniles.php">Viniles</a>
+                            <a class="dropdown-item" href="tapiceria/tapiceria.php">Tapiceria</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="promociones/promociones.php">PROMOCIONES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros/nosotros.php">NOSOTROS</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 
-      <!-- Page Header -->
-  <header class="header">
-    <div class="overlay">
-        <img src="assets/Logo.png" alt="Logo" class="logo">
-        <h1 class="subtitle">La mejor decoracion para tu HOGAR</h1>
-        <h1 class="title">BIENVENIDO A REMTO DECORACION</h1> 
-        <a class="btn btn-primary mt-3" href="#about">INICIO</a> 
-    </div>      
-</header>
+    <!-- Page Header -->
+    <header class="header">
+        <div class="overlay">
+            <img src="assets/Logo.png" alt="Logo" class="logo">
+            <h1 class="subtitle">La mejor decoracion para tu HOGAR</h1>
+            <h1 class="title">BIENVENIDO A REMTO DECORACION</h1>
+            <a class="btn btn-primary mt-3" href="#about">INICIO</a>
+        </div>
+    </header>
 
-<section id="about" class="container-category">
+    <section id="about" class="container-category">
         <!-- Producto 1 -->
         <div class="card-category">
             <div class="container-img">
-                <img src="assets/Plantas.jpg" alt="Plantas"/>
+                <img src="assets/Plantas.jpg" alt="Plantas" />
             </div>
             <div class="content-card-category">
                 <h3>Plantas</h3>
@@ -379,7 +436,7 @@
         <!-- Producto 2 -->
         <div class="card-category">
             <div class="container-img">
-                <img src="assets/Cortinas.jpg" alt="Cortinas y Persianas"/>
+                <img src="assets/Cortinas.jpg" alt="Cortinas y Persianas" />
             </div>
             <div class="content-card-category">
                 <h3>Cortinas y Persianas</h3>
@@ -390,7 +447,7 @@
         <!-- Producto 3 -->
         <div class="card-category">
             <div class="container-img">
-                <img src="assets/Alfombras.jpg" alt="Alfombras"/>
+                <img src="assets/Alfombras.jpg" alt="Alfombras" />
             </div>
             <div class="content-card-category">
                 <h3>Alfombras</h3>
@@ -401,7 +458,7 @@
         <!-- Producto 4 -->
         <div class="card-category">
             <div class="container-img">
-                <img src="assets/Exterior.jpg" alt="Exterior"/>
+                <img src="assets/Exterior.jpg" alt="Exterior" />
             </div>
             <div class="content-card-category">
                 <h3>Exterior</h3>
@@ -411,93 +468,99 @@
     </section>
 
     <section class="container products">
-    <h2 class="heading-1">Productos</h2>
-    <div class="container-products">
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
+        <h2 class="heading-1">Productos</h2>
+        <div class="container-products">
+            <div class="card-product">
+                <div class="container1-img">
+                    <img src="assets/Alfombras2.jpg" alt="" />
+                </div>
+                <div class="content-product">
+                    <h3>Cortinas prega inglesa</h3>
+                </div>
             </div>
-            <div class="content-product">
-                <h3>Cortinas prega inglesa</h3>
+            <div class="card-product">
+                <div class="container1-img">
+                    <img src="assets/Alfombras2.jpg" alt="" />
+                </div>
+                <div class="content-product">
+                    <h3>Persinas enrollables de cinta</h3>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container1-img">
+                    <img src="assets/Alfombras2.jpg" alt="" />
+                </div>
+                <div class="content-product">
+                    <h3>Patas decorativas</h3>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container1-img">
+                    <img src="assets/Alfombras2.jpg" alt="" />
+                </div>
+                <div class="content-product">
+                    <h3>Tapiceria</h3>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container1-img">
+                    <img src="assets/Alfombras2.jpg" alt="" />
+                </div>
+                <div class="content-product">
+                    <h3>Tapete</h3>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container1-img">
+                    <img src="assets/Alfombras2.jpg" alt="" />
+                </div>
+                <div class="content-product">
+                    <h3>Pisos Antiderrantes</h3>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container1-img">
+                    <img src="assets/Alfombras2.jpg" alt="" />
+                </div>
+                <div class="content-product">
+                    <h3>Captus</h3>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container1-img">
+                    <img src="assets/Alfombras2.jpg" alt="" />
+                </div>
+                <div class="content-product">
+                    <h3>Cortinas Presillas</h3>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container1-img">
+                    <img src="assets/Alfombras2.jpg" alt="" />
+                </div>
+                <div class="content-product">
+                    <h3>Pisos Antiderrantes</h3>
+                </div>
+            </div>
+            <div class="card-product">
+                <div class="container1-img">
+                    <img src="assets/Alfombras2.jpg" alt="" />
+                </div>
+                <div class="content-product">
+                    <h3>Persianas lisas</h3>
+                </div>
             </div>
         </div>
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
-            </div>
-            <div class="content-product">
-                <h3>Persinas enrollables de cinta</h3>
-            </div>
-        </div>
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
-            </div>
-            <div class="content-product">
-                <h3>Patas decorativas</h3>
-            </div>
-        </div>
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
-            </div>
-            <div class="content-product">
-                <h3>Tapiceria</h3>
-            </div>
-        </div>
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
-            </div>
-            <div class="content-product">
-                <h3>Tapete</h3>
-            </div>
-        </div>
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
-            </div>
-            <div class="content-product">
-                <h3>Pisos Antiderrantes</h3>
-            </div>
-        </div>
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
-            </div>
-            <div class="content-product">
-                <h3>Captus</h3>
-            </div>
-        </div>
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
-            </div>
-            <div class="content-product">
-                <h3>Cortinas Presillas</h3>
-            </div>
-        </div>
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
-            </div>
-            <div class="content-product">
-                <h3>Pisos Antiderrantes</h3>
-            </div>
-        </div>
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
-            </div>
-            <div class="content-product">
-                <h3>Persianas lisas</h3>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-   <!-- Footer -->
-   <footer class="footer">
+    <!-- Ícono de WhatsApp -->
+    <a href="https://wa.me/529616138465" class="whatsapp-icon bounce" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container text-center">
             <div class="row">
                 <div class="col-md-4">
@@ -534,4 +597,5 @@
 
 
 </body>
+
 </html>
