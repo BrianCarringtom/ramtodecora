@@ -29,7 +29,7 @@
         }
 
         .bg-custom {
-            background:linear-gradient(30deg, royalblue, red);
+            background: linear-gradient(30deg, royalblue, red);
         }
 
         /* Estilos de Navegación */
@@ -155,7 +155,6 @@
             flex-direction: column;
             gap: 4rem;
             padding-top: 60px;
-            
         }
 
         .card-product {
@@ -298,7 +297,6 @@
         .nav-item.dropdown:hover .dropdown-menu {
             display: block;
         }
-
     </style>
     
 </head>
@@ -308,233 +306,189 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="assets/Logo.png" alt="Logo de RAMTO Decoración">
+            <img src="assets/ramto2.png" alt="Logo de RAMTO">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">INICIO</a>
+                    <a class="nav-link" href="#quienes-somos">Quienes Somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicios">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#productos">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#catalogo">Catálogo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#footer">Síguenos</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="decoracion/decoracion.php" id="navbarDecoracion" role="button">
-                        DECORACIÓN
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Más
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDecoracion">
-                        <a class="dropdown-item" href="decoracion/cortinasypercianas.php">Cortinas y Persianas</a>
-                        <a class="dropdown-item" href="decoracion/acabados.php">Acabados</a>
-                        <a class="dropdown-item" href="decoracion/pisos.php">Pisos</a>
-                        <a class="dropdown-item" href="decoracion/pinturas.php">Pinturas</a>
-                        <a class="dropdown-item" href="decoracion/mantelerias.php">Manteleria</a>
-                        <a class="dropdown-item" href="decoracion/plantas.php">Plantas</a>
-                        <a class="dropdown-item" href="decoracion/exterior.php">Exterior</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#testimonios">Testimonios</a>
+                        <a class="dropdown-item" href="#blog">Blog</a>
                     </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="tapiceria/tapiceria.php" id="navbarTapiceria" role="button">
-                        TAPICERÍA
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarTapiceria">
-                        <a class="dropdown-item" href="tapiceria/alfombras.php">Alfombras</a>
-                        <a class="dropdown-item" href="tapiceria/viniles.php">Viniles</a>
-                        <a class="dropdown-item" href="tapiceria/tapiceria.php">Tapiceria</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="promociones/promociones.php">PROMOCIONES</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="nosotros/nosotros.php">NOSOTROS</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
 
-
-      <!-- Page Header -->
-  <header class="header">
+<!-- Header Section -->
+<header class="header">
     <div class="overlay">
-        <img src="assets/Logo.png" alt="Logo" class="logo">
-        <h1 class="subtitle">La mejor decoracion para tu HOGAR</h1>
-        <h1 class="title">BIENVENIDO A REMTO DECORACION</h1> 
-        <a class="btn btn-primary mt-3" href="#about">INICIO</a> 
-    </div>      
+        <img src="assets/ramto2.png" alt="Logo de RAMTO Decoración" class="logo">
+        <h1 class="title">RAMTO DECORACION</h1>
+        <p class="subtitle">Soluciones en decoración y tapicería</p>
+        <a href="#productos" class="btn-primary">Ver productos</a>
+    </div>
 </header>
 
-<section id="about" class="container-category">
-        <!-- Producto 1 -->
-        <div class="card-category">
-            <div class="container-img">
-                <img src="assets/Plantas.jpg" alt="Plantas"/>
-            </div>
-            <div class="content-card-category">
-                <h3>Plantas</h3>
-                <a class="btn-view-more" href="decoracion/plantas.php">Ver más..</a>
-            </div>
-        </div>
+<!-- Sección de Quiénes Somos -->
+<section id="quienes-somos" class="container section-content">
+    <h2 class="section-title">Quiénes Somos</h2>
+    <p>RAMTO Decoración es una empresa dedicada a ofrecer las mejores soluciones en decoración y tapicería...</p>
+</section>
 
-        <!-- Producto 2 -->
-        <div class="card-category">
-            <div class="container-img">
-                <img src="assets/Cortinas.jpg" alt="Cortinas y Persianas"/>
-            </div>
-            <div class="content-card-category">
-                <h3>Cortinas y Persianas</h3>
-                <a class="btn-view-more" href="decoracion/cortinasypercianas.php">Ver más..</a>
-            </div>
-        </div>
+<!-- Sección de Servicios -->
+<section id="servicios" class="container section-content">
+    <h2 class="section-title">Servicios</h2>
+    <p>Ofrecemos una amplia gama de servicios para decorar y renovar tus espacios...</p>
+</section>
 
-        <!-- Producto 3 -->
-        <div class="card-category">
-            <div class="container-img">
-                <img src="assets/Alfombras.jpg" alt="Alfombras"/>
-            </div>
-            <div class="content-card-category">
-                <h3>Alfombras</h3>
-                <a class="btn-view-more" href="tapiceria/alfombras.php">Ver más..</a>
-            </div>
-        </div>
-
-        <!-- Producto 4 -->
-        <div class="card-category">
-            <div class="container-img">
-                <img src="assets/Exterior.jpg" alt="Exterior"/>
-            </div>
-            <div class="content-card-category">
-                <h3>Exterior</h3>
-                <a class="btn-view-more" href="decoracion/exterior.php">Ver más..</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="container products">
-    <h2 class="heading-1">Productos</h2>
+<!-- Sección de Productos -->
+<section id="productos" class="container section-content">
+    <h2 class="section-title">Nuestros Productos</h2>
     <div class="container-products">
         <div class="card-product">
             <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
+                <img src="assets/producto1.jpg" alt="Producto 1">
             </div>
             <div class="content-product">
-                <h3>Cortinas prega inglesa</h3>
+                <h3>Producto 1</h3>
             </div>
         </div>
         <div class="card-product">
             <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
+                <img src="assets/producto2.jpg" alt="Producto 2">
             </div>
             <div class="content-product">
-                <h3>Persinas enrollables de cinta</h3>
+                <h3>Producto 2</h3>
             </div>
         </div>
         <div class="card-product">
             <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
+                <img src="assets/producto3.jpg" alt="Producto 3">
             </div>
             <div class="content-product">
-                <h3>Patas decorativas</h3>
+                <h3>Producto 3</h3>
             </div>
         </div>
         <div class="card-product">
             <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
+                <img src="assets/producto4.jpg" alt="Producto 4">
             </div>
             <div class="content-product">
-                <h3>Tapiceria</h3>
-            </div>
-        </div>
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
-            </div>
-            <div class="content-product">
-                <h3>Tapete</h3>
-            </div>
-        </div>
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
-            </div>
-            <div class="content-product">
-                <h3>Pisos Antiderrantes</h3>
-            </div>
-        </div>
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
-            </div>
-            <div class="content-product">
-                <h3>Captus</h3>
-            </div>
-        </div>
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
-            </div>
-            <div class="content-product">
-                <h3>Cortinas Presillas</h3>
-            </div>
-        </div>
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
-            </div>
-            <div class="content-product">
-                <h3>Pisos Antiderrantes</h3>
-            </div>
-        </div>
-        <div class="card-product">
-            <div class="container1-img">
-                <img src="assets/Alfombras2.jpg" alt="" />
-            </div>
-            <div class="content-product">
-                <h3>Persianas lisas</h3>
+                <h3>Producto 4</h3>
             </div>
         </div>
     </div>
 </section>
 
-   <!-- Footer -->
-   <footer class="footer">
-        <div class="container text-center">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>Contacto</h5>
-                    <ul class="list-unstyled">
-                        <li>Email: info@ramtodecoracion.com</li>
-                        <li>Tel: 123-456-7890</li>
-                        <li>Dirección: Av. Ejemplo 123, Ciudad</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Redes Sociales</h5>
-                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-                <div class="col-md-4">
-                    <h5>Boletín</h5>
-                    <p>Suscríbete a nuestro boletín para recibir ofertas especiales y noticias.</p>
-                    <form action="#">
-                        <input type="email" placeholder="Tu email" class="form-control">
-                        <button type="submit" class="btn btn-primary mt-2">Suscribirse</button>
-                    </form>
-                </div>
+<!-- Sección de Catálogo -->
+<section id="catalogo" class="container section-content">
+    <h2 class="section-title">Catálogo</h2>
+    <div class="container-category">
+        <div class="card-category">
+            <div class="container-img">
+                <img src="assets/catalogo1.jpg" alt="Categoría 1">
             </div>
-            <div class="row mt-4">
-                <div class="col-12">
-                    <p class="m-0">&copy; 2023 RAMTO Decoración. Todos los derechos reservados.</p>
-                </div>
+            <div class="content-card-category">
+                <h3>Categoría 1</h3>
+                <a href="#" class="btn-view-more">Ver más</a>
             </div>
         </div>
-    </footer>
+        <div class="card-category">
+            <div class="container-img">
+                <img src="assets/catalogo2.jpg" alt="Categoría 2">
+            </div>
+            <div class="content-card-category">
+                <h3>Categoría 2</h3>
+                <a href="#" class="btn-view-more">Ver más</a>
+            </div>
+        </div>
+        <div class="card-category">
+            <div class="container-img">
+                <img src="assets/catalogo3.jpg" alt="Categoría 3">
+            </div>
+            <div class="content-card-category">
+                <h3>Categoría 3</h3>
+                <a href="#" class="btn-view-more">Ver más</a>
+            </div>
+        </div>
+        <div class="card-category">
+            <div class="container-img">
+                <img src="assets/catalogo4.jpg" alt="Categoría 4">
+            </div>
+            <div class="content-card-category">
+                <h3>Categoría 4</h3>
+                <a href="#" class="btn-view-more">Ver más</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Sección de Contacto -->
+<section id="contacto" class="container section-content">
+    <h2 class="section-title">Contacto</h2>
+    <p>Puedes ponerte en contacto con nosotros a través de...</p>
+</section>
 
+<!-- Footer -->
+<footer id="footer" class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Sobre Nosotros</h4>
+                <p>RAMTO Decoración es una empresa líder en soluciones de decoración y tapicería...</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#quienes-somos">Quiénes Somos</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 text-right">
+                <h4>Síguenos</h4>
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i>Facebook</a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i>Twitter</a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i>Instagram</a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i>LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
