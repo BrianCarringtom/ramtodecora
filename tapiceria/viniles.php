@@ -312,14 +312,36 @@
         <input type="text" id="searchInput" placeholder="Buscar...">
     </div>
 
-    <!-- Menú de ordenamiento -->
-    <div class="sort-menu text-center">
-        <label for="sortOptions">Ordenar por:</label>
-        <select id="sortOptions" class="ml-2">
-            <option value="default">Seleccionar</option>
-            <option value="price">Precio <i class="fas fa-arrow-down"></i></option>
-            <option value="name">Nombre <i class="fas fa-arrow-down"></i></option>
-        </select>
+    <div class="container">
+        <!-- Menú de ordenamiento -->
+        <div class="sort-menu text-center">
+            <label for="sortOptions">Ordenar por:</label>
+            <select id="sortOptions" class="ml-2">
+                <option value="default">Seleccionar</option>
+                <option value="price">Precio <i class="fas fa-arrow-down"></i></option>
+                <option value="name">Nombre <i class="fas fa-arrow-down"></i></option>
+            </select>
+        </div>
+
+        <!-- Tabla de Subcategorías -->
+        <table class="sub-nav-table">
+            <thead>
+                <tr>
+                    <th>Tapiceria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="alfombras.php">Alfombras</a></td>
+                </tr>
+                <tr>
+                    <td><a href="viniles.php">Viniles</a></td>
+                </tr>
+                <tr>
+                    <td><a href="tapiceria.php">Tapicería</a></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <!-- Sección de Productos -->
@@ -548,6 +570,18 @@
             container.innerHTML = '';
             products.forEach(product => container.appendChild(product));
         });
+
+        function filterProducts(query) {
+            const products = document.querySelectorAll('.card-product');
+            products.forEach(product => {
+                const title = product.querySelector('h3').innerText.toLowerCase();
+                if (title.includes(query.toLowerCase())) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
     </script>
 
     <!-- Modal de opciones de pago -->
