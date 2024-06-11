@@ -319,7 +319,7 @@
                 <img src="../assets/alfombras2.jpg" alt="Acabados 1">
             </div>
             <div class="content-product">
-                <h3>Acabados 1</h3>
+                <h3>Decoracion 1</h3>
                 <p>Precio: $100</p>
                 <button class="btn btn-comprar" onclick="addToCart('Acabados 1', 100)">Comprar</button>
             </div>
