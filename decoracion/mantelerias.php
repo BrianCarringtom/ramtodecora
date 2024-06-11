@@ -312,6 +312,16 @@
         <input type="text" id="searchInput" placeholder="Buscar...">
     </div>
 
+    <!-- Menú de ordenamiento -->
+    <div class="sort-menu text-center">
+        <label for="sortOptions">Ordenar por:</label>
+        <select id="sortOptions" class="ml-2">
+            <option value="default">Seleccionar</option>
+            <option value="price">Precio <i class="fas fa-arrow-down"></i></option>
+            <option value="name">Nombre <i class="fas fa-arrow-down"></i></option>
+        </select>
+    </div>
+
     <!-- Sección de Productos -->
     <div class="container-products">
         <div class="card-product" data-name="Mantelerias 1" data-price="100">
@@ -512,6 +522,21 @@
                 currentPage++;
                 renderCartItems();
             }
+        });
+
+        document.getElementById('sortOptions').addEventListener('change', function() {
+            const sortBy = this.value;
+            const products = Array.from(document.querySelectorAll('.card-product'));
+
+            if (sortBy === 'price') {
+                products.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+            } else if (sortBy === 'name') {
+                products.sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
+            }
+
+            const container = document.querySelector('.container-products');
+            container.innerHTML = '';
+            products.forEach(product => container.appendChild(product));
         });
     </script>
     <!-- Modal de opciones de pago -->

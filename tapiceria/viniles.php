@@ -312,16 +312,26 @@
         <input type="text" id="searchInput" placeholder="Buscar...">
     </div>
 
+    <!-- Menú de ordenamiento -->
+    <div class="sort-menu text-center">
+        <label for="sortOptions">Ordenar por:</label>
+        <select id="sortOptions" class="ml-2">
+            <option value="default">Seleccionar</option>
+            <option value="price">Precio <i class="fas fa-arrow-down"></i></option>
+            <option value="name">Nombre <i class="fas fa-arrow-down"></i></option>
+        </select>
+    </div>
+
     <!-- Sección de Productos -->
     <div class="container-products">
-        <div class="card-product" data-name="Viniles 1" data-price="150">
+        <div class="card-product" data-name="Viniles 1" data-price="650">
             <div class="container1-img">
                 <img src="../assets/alfombras2.jpg" alt="Viniles 1">
             </div>
             <div class="content-product">
                 <h3>Viniles 1</h3>
-                <p>Precio: $150</p>
-                <button class="btn btn-comprar" onclick="addToCart('Viniles 1', 150)">Comprar</button>
+                <p>Precio: $650</p>
+                <button class="btn btn-comprar" onclick="addToCart('Viniles 1', 650)">Comprar</button>
             </div>
         </div>
         <div class="card-product" data-name="Viniles 2" data-price="250">
@@ -522,6 +532,21 @@
                 currentPage++;
                 renderCartItems();
             }
+        });
+
+        document.getElementById('sortOptions').addEventListener('change', function() {
+            const sortBy = this.value;
+            const products = Array.from(document.querySelectorAll('.card-product'));
+
+            if (sortBy === 'price') {
+                products.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+            } else if (sortBy === 'name') {
+                products.sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
+            }
+
+            const container = document.querySelector('.container-products');
+            container.innerHTML = '';
+            products.forEach(product => container.appendChild(product));
         });
     </script>
 
