@@ -26,6 +26,62 @@
             text-align: center;
         }
 
+        .section-content {
+            margin-bottom: 60px;
+        }
+
+        /* Estilos del Footer */
+        .footer,
+        .py-4 {
+            background-color: #343a40;
+            /* Fondo oscuro */
+            color: white;
+            padding-top: 40px;
+            padding-bottom: 20px;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+            margin-left: 20px;
+            /* Add some spacing between links */
+        }
+
+        .social-link i {
+            margin-right: 5px;
+        }
+
+        .navbar-nav:hover {
+            background-color: #343a40;
+            /* Color de fondo al hacer hover */
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #FF0000;
+            /* Color de texto al hacer hover */
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Cambia el color de fondo al pasar el cursor sobre el elemento */
+            color: red !important;
+            /* Cambia el color del texto al pasar el cursor sobre el elemento */
+        }
+
         .promocion {
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -83,33 +139,11 @@
         .ver-mas-btn:hover {
             background-color: rgba(0, 86, 179, 0.7);
         }
-
-        .footer {
-            background-color: #343a40;
-            color: white;
-            padding-top: 40px;
-            padding-bottom: 20px;
-        }
-
-        .logo {
-            max-width: 200px;
-            margin-bottom: 20px;
-        }
-
-        .social-link {
-            color: white;
-            margin-right: 15px;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-
-        .social-link i {
-            margin-right: 5px;
-        }
     </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="56">
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
@@ -129,13 +163,13 @@
                             DECORACIÓN
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDecoracion">
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Cortinas y Persianas</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Acabados</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Pisos</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Pinturas</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Mantelería</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Plantas</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Exterior</a>
+                            <a class="dropdown-item" href="../decoracion/cortinasypercianas.php">Cortinas y Persianas</a>
+                            <a class="dropdown-item" href="../decoracion/acabados.php">Acabados</a>
+                            <a class="dropdown-item" href="../decoracion/pisos.php">Pisos</a>
+                            <a class="dropdown-item" href="../decoracion/pinturas.php">Pinturas</a>
+                            <a class="dropdown-item" href="../decoracion/mantelerias.php">Mantelería</a>
+                            <a class="dropdown-item" href="../decoracion/plantas.php">Plantas</a>
+                            <a class="dropdown-item" href="../decoracion/exterior.php">Exterior</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -143,8 +177,8 @@
                             TAPICERÍA
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarTapiceria">
-                            <a class="dropdown-item" href="../tapiceria/tapiceria.php">Alfombras</a>
-                            <a class="dropdown-item" href="../tapiceria/tapiceria.php">Vinilos</a>
+                            <a class="dropdown-item" href="../tapiceria/alfombras.php">Alfombras</a>
+                            <a class="dropdown-item" href="../tapiceria/viniles.php">Viniles</a>
                             <a class="dropdown-item" href="../tapiceria/tapiceria.php">Tapicería</a>
                         </div>
                     </li>
@@ -199,9 +233,10 @@
                     <a href="detalles.php?promoId=3" class="ver-mas-btn">Ver más</a>
                 </div>
             </div>
-            <!-- Agregar más promociones aquí según sea necesario -->
         </div>
     </section>
+
+    
 
     <!-- Footer -->
     <footer class="footer">
@@ -229,7 +264,7 @@
             </div>
             <div class="row mt-4">
                 <div class="col-12">
-                    <p class="text-center">© 2023 RAMTO Decoración. Todos los derechos reservados.</p>
+                    <p class="m-0">&copy; 2023 RAMTO Decoración. Todos los derechos reservados.</p>
                 </div>
             </div>
         </div>
@@ -238,6 +273,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>

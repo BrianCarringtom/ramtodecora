@@ -104,11 +104,11 @@
                             DECORACIÓN
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDecoracion">
-                            <a class="dropdown-item" href="../decoracion/cortinas.php">Cortinas y Persianas</a>
+                            <a class="dropdown-item" href="../decoracion/cortinasypercianas.php">Cortinas y Persianas</a>
                             <a class="dropdown-item" href="../decoracion/acabados.php">Acabados</a>
                             <a class="dropdown-item" href="../decoracion/pisos.php">Pisos</a>
                             <a class="dropdown-item" href="../decoracion/pinturas.php">Pinturas</a>
-                            <a class="dropdown-item" href="../decoracion/manteleria.php">Mantelería</a>
+                            <a class="dropdown-item" href="../decoracion/mantelerias.php">Mantelería</a>
                             <a class="dropdown-item" href="../decoracion/plantas.php">Plantas</a>
                             <a class="dropdown-item" href="../decoracion/exterior.php">Exterior</a>
                         </div>
@@ -119,8 +119,8 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarTapiceria">
                             <a class="dropdown-item" href="../tapiceria/alfombras.php">Alfombras</a>
-                            <a class="dropdown-item" href="../tapiceria/vinilos.php">Vinilos</a>
-                            <a class="dropdown-item" href="../tapiceria/tapiceria-general.php">Tapicería General</a>
+                            <a class="dropdown-item" href="../tapiceria/viniles.php">Viniles</a>
+                            <a class="dropdown-item" href="../tapiceria/tapiceria.php">Tapicería</a>
                         </div>
                     </li>
                     <li class="nav-item">

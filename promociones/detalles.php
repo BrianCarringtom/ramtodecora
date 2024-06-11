@@ -123,6 +123,31 @@
         .social-link i {
             margin-right: 5px;
         }
+
+        .navbar-nav:hover {
+            background-color: #343a40;
+            /* Color de fondo al hacer hover */
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #FF0000;
+            /* Color de texto al hacer hover */
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Cambia el color de fondo al pasar el cursor sobre el elemento */
+            color: red !important;
+            /* Cambia el color del texto al pasar el cursor sobre el elemento */
+        }
     </style>
 </head>
 
@@ -146,13 +171,13 @@
                             DECORACIÓN
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDecoracion">
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Cortinas y Persianas</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Acabados</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Pisos</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Pinturas</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Mantelería</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Plantas</a>
-                            <a class="dropdown-item" href="../decoracion/decoracion.php">Exterior</a>
+                            <a class="dropdown-item" href="../decoracion/cortinasypercianas.php">Cortinas y Persianas</a>
+                            <a class="dropdown-item" href="../decoracion/acabados.php">Acabados</a>
+                            <a class="dropdown-item" href="../decoracion/pisos.php">Pisos</a>
+                            <a class="dropdown-item" href="../decoracion/pinturas.php">Pinturas</a>
+                            <a class="dropdown-item" href="../decoracion/mantelerias.php">Mantelería</a>
+                            <a class="dropdown-item" href="../decoracion/plantas.php">Plantas</a>
+                            <a class="dropdown-item" href="../decoracion/exterior.php">Exterior</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -160,8 +185,8 @@
                             TAPICERÍA
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarTapiceria">
-                            <a class="dropdown-item" href="../tapiceria/tapiceria.php">Alfombras</a>
-                            <a class="dropdown-item" href="../tapiceria/tapiceria.php">Vinilos</a>
+                            <a class="dropdown-item" href="../tapiceria/alfombras.php">Alfombras</a>
+                            <a class="dropdown-item" href="../tapiceria/viniles.php">Viniles</a>
                             <a class="dropdown-item" href="../tapiceria/tapiceria.php">Tapicería</a>
                         </div>
                     </li>
