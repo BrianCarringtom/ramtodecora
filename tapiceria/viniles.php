@@ -301,7 +301,7 @@
         <table class="sub-nav-table">
             <thead>
                 <tr>
-                    <th>Tapiceria</th>
+                    <th>Viniles</th>
                 </tr>
             </thead>
             <tbody>

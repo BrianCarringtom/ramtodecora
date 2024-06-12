@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RAMTO Decoración - Soluciones en decoración y tapicería.">
     <meta name="author" content="Devcrud">
-    <title>Tapiceria</title>
+    <title>TAPICERIA</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -244,36 +244,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../nosotros/nosotros.php">NOSOTROS</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="cart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-shopping-cart"></i> Carrito (<span id="cart-count">0</span>)
+                    <li class="nav-item">
+                        <a class="nav-link" href="../carrito.php">
+                            <i class="fas fa-shopping-cart"></i> CARRITO
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="cart">
-                            <h6 class="dropdown-header">Productos en el carrito</h6>
-                            <table class="table" id="cart-items-table">
-                                <thead>
-                                    <tr>
-                                        <th>Producto</th>
-                                        <th>Precio</th>
-                                        <th>Cantidad</th>
-                                        <th>Total</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="cart-items"></tbody>
-                            </table>
-                            <div class="dropdown-divider"></div>
-                            <div class="dropdown-item-text">Total: $<span id="cart-total">0.00</span></div>
-                            <div class="d-flex justify-content-end mr-3">
-                                <button class="btn btn-primary ml-auto" id="checkout-btn">Pagar</button>
-                            </div>
-                            <div class="pagination-controls text-center mt-3">
-                                <button class="btn btn-secondary btn-sm" id="prev-page">Anterior</button>
-                                <span id="page-info">Página 1</span>
-                                <button class="btn btn-secondary btn-sm" id="next-page">Siguiente</button>
-                            </div>
-                        </div>
-
                     </li>
                 </ul>
             </div>
@@ -311,7 +285,6 @@
     <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Buscar...">
     </div>
-
 
     <div class="container">
         <!-- Menú de ordenamiento -->
@@ -427,29 +400,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            updateCart();
             renderCartItems();
         });
 
-        document.getElementById('searchInput').addEventListener('input', function() {
-            const searchTerm = this.value.trim().toLowerCase();
-            const products = document.querySelectorAll('.card-product');
-
-            products.forEach(function(product) {
-                const title = product.querySelector('h3').textContent.trim().toLowerCase();
-                product.style.display = title.includes(searchTerm) ? 'block' : 'none';
-            });
-        });
-
-        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        let currentPage = 1;
-        const itemsPerPage = 4;
-
-        function saveCart() {
-            localStorage.setItem('cartItems', JSON.stringify(cartItems));
-        }
-
         function addToCart(productName, price) {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
             let existingItem = cartItems.find(item => item.name === productName);
 
             if (existingItem) {
@@ -465,12 +420,60 @@
                 cartItems.push(existingItem);
             }
 
-            updateCart();
-            saveCart();
-            alert(productName + ' ha sido añadido al carrito.');
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            renderCartItems();
+        }
+
+        function renderCartItems() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            if (cartItemsContainer) {
+                cartItemsContainer.innerHTML = '';
+
+                cartItems.forEach(function(item) {
+                    const row = document.createElement('tr');
+                    row.classList.add('cart-item');
+
+                    ['name', 'price', 'quantity', 'totalPrice'].forEach(property => {
+                        const cell = document.createElement('td');
+                        if (property === 'price' || property === 'totalPrice') {
+                            cell.textContent = '$' + item[property].toFixed(2);
+                        } else {
+                            cell.textContent = item[property];
+                        }
+                        row.appendChild(cell);
+                    });
+
+                    const actionsCell = document.createElement('td');
+                    const incrementButton = createButton('+', 'btn-success', function() {
+                        addToCart(item.name, item.price);
+                    });
+
+                    const decrementButton = createButton('-', 'btn-warning', function() {
+                        removeFromCart(item.name, item.price);
+                    });
+
+                    actionsCell.appendChild(incrementButton);
+                    actionsCell.appendChild(decrementButton);
+                    row.appendChild(actionsCell);
+
+                    cartItemsContainer.appendChild(row);
+                });
+
+                updateCartTotal(cartItems);
+            }
+        }
+
+        function createButton(text, className, onClick) {
+            const button = document.createElement('button');
+            button.textContent = text;
+            button.classList.add('btn', 'btn-sm', className);
+            button.addEventListener('click', onClick);
+            return button;
         }
 
         function removeFromCart(productName, price) {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
             const existingItemIndex = cartItems.findIndex(item => item.name === productName);
 
             if (existingItemIndex !== -1) {
@@ -483,98 +486,32 @@
                 }
             }
 
-            updateCart();
-            saveCart();
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            renderCartItems();
         }
 
-        function renderCartItem(item) {
-            const row = document.createElement('tr');
-            row.classList.add('cart-item');
-
-            ['name', 'price', 'quantity', 'totalPrice'].forEach(property => {
-                const cell = document.createElement('td');
-                if (property === 'price' || property === 'totalPrice') {
-                    cell.textContent = '$' + item[property].toFixed(2);
-                } else {
-                    cell.textContent = item[property];
-                }
-                row.appendChild(cell);
-            });
-
-            const actionsCell = document.createElement('td');
-
-            const incrementButton = createButton('+', 'btn-success', function() {
-                addToCart(item.name, item.price);
-            });
-
-            incrementButton.style.marginRight = '5px'; // Ajusta el margen entre el botón "+" y el botón "-"
-
-            const decrementButton = createButton('-', 'btn-warning', function() {
-                removeFromCart(item.name, item.price);
-            });
-
-            actionsCell.appendChild(incrementButton);
-            actionsCell.appendChild(decrementButton);
-            row.appendChild(actionsCell);
-
-            return row;
-        }
-
-        function createButton(text, className, onClick) {
-            const button = document.createElement('button');
-            button.textContent = text;
-            button.classList.add('btn', 'btn-sm', className);
-            button.addEventListener('click', onClick);
-            return button;
-        }
-
-        function renderCartItems() {
-            const cartItemsContainer = document.getElementById('cart-items');
-            cartItemsContainer.innerHTML = '';
-
-            const start = (currentPage - 1) * itemsPerPage;
-            const end = start + itemsPerPage;
-            const paginatedItems = cartItems.slice(start, end);
-
-            paginatedItems.forEach(function(item) {
-                cartItemsContainer.appendChild(renderCartItem(item));
-            });
-
-            document.getElementById('page-info').innerText = `Página ${currentPage}`;
-        }
-
-        function updateCartTotal() {
+        function updateCartTotal(cartItems) {
             let totalPrice = 0;
-            let totalQuantity = 0;
-
             cartItems.forEach(function(item) {
                 totalPrice += item.totalPrice;
-                totalQuantity += item.quantity;
             });
 
             document.getElementById('cart-total').innerText = totalPrice.toFixed(2);
-            document.getElementById('cart-count').innerText = totalQuantity;
         }
 
-        function updateCart() {
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCart();
             renderCartItems();
-            updateCartTotal();
-            saveCart();
-        }
-
-        document.getElementById('prev-page').addEventListener('click', function() {
-            if (currentPage > 1) {
-                currentPage--;
-                renderCartItems();
-            }
         });
 
-        document.getElementById('next-page').addEventListener('click', function() {
-            const totalPages = Math.ceil(cartItems.length / itemsPerPage);
-            if (currentPage < totalPages) {
-                currentPage++;
-                renderCartItems();
-            }
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.trim().toLowerCase();
+            const products = document.querySelectorAll('.card-product');
+
+            products.forEach(function(product) {
+                const title = product.querySelector('h3').textContent.trim().toLowerCase();
+                product.style.display = title.includes(searchTerm) ? 'block' : 'none';
+            });
         });
 
         document.getElementById('sortOptions').addEventListener('change', function() {
@@ -603,40 +540,6 @@
                 }
             });
         }
-    </script>
-
-    <!-- Modal de opciones de pago -->
-    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="paymentModalLabel">Opciones de Pago</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Seleccione su método de pago preferido:</p>
-                    <ul>
-                        <li><a href="https://www.santander.com.mx/" target="_blank">Pagar con Banco Santander</a></li>
-                        <li><a href="https://www.banorte.com/" target="_blank">Pagar con Banorte</a></li>
-                        <li><a href="https://www.bancomer.com/" target="_blank">Pagar con Bancomer</a></li>
-                        <!-- Agrega más opciones de pago según sea necesario -->
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script>
-        // Agrega un evento click al botón de pago para abrir el modal de opciones de pago
-        document.getElementById('checkout-btn').addEventListener('click', function() {
-            $('#paymentModal').modal('show'); // Abre el modal usando jQuery
-        });
     </script>
 
 </body>
