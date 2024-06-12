@@ -188,6 +188,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../nosotros/nosotros.php">NOSOTROS</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../carrito.php">
+                            <i class="fas fa-shopping-cart"></i> CARRITO
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
