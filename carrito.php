@@ -7,6 +7,10 @@
     <title>Carrito de Compras</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        body {
+            background: linear-gradient(to bottom, #b3e0ff, #ffffff);
+        }
+
         @media (max-width: 768px) {
             .table-responsive {
                 overflow-x: auto;

@@ -13,7 +13,7 @@
   <style>
     body {
       padding-top: 56px;
-      background: #f5f5f1;
+      background: linear-gradient(to bottom, #b3e0ff, #ffffff);
     }
 
     .navbar-brand img {

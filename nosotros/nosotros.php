@@ -13,7 +13,7 @@
     <style>
         body {
             padding-top: 56px;
-            background: #f5f5f1;
+            background: linear-gradient(to bottom, #b3e0ff, #ffffff);
         }
 
         .navbar-brand img {
@@ -155,7 +155,7 @@
     <!-- End of Mission Section -->
 
     <!-- Visión Section -->
-    <section id="vision" class="section bg-light">
+    <section id="vision" class="section">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center section-title">

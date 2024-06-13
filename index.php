@@ -13,14 +13,7 @@
     <style>
         /* Estilos Generales */
         body {
-            font-family: 'Roboto', Arial, sans-serif;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            background: #f5f5f1;
-            padding-top: 56px;
+            background: linear-gradient(to bottom, #b3e0ff, #ffffff);
         }
 
         .container {
