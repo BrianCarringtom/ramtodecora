@@ -332,14 +332,14 @@
 
     <!-- Sección de Productos -->
     <div class="container-products">
-        <div class="card-product" data-name="Cortinas y Percianas 1" data-price="100">
+        <div class="card-product" data-name="Cortinas y Percianas 1" data-price="100" data-image="../assets/alfombras2.jpg">
             <div class="container1-img">
                 <img src="../assets/alfombras2.jpg" alt="Acabados 1">
             </div>
             <div class="content-product">
                 <h3>Cortinas y Percianas 1</h3>
                 <p>Precio: $100</p>
-                <button class="btn btn-comprar" onclick="addToCart('Cortinas y Percianas 1', 100)">Comprar</button>
+                <button class="btn btn-comprar" onclick="addToCart('Cortinas y Percianas 1', 100, '../assets/alfombras2.jpg')">Comprar</button>
             </div>
         </div>
     </div>
@@ -389,6 +389,8 @@
             const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
             let existingItem = cartItems.find(item => item.name === productName);
 
+            const productImage = document.querySelector(`.card-product[data-name="${productName}"] img`).src;
+
             if (existingItem) {
                 existingItem.quantity++;
                 existingItem.totalPrice += price;
@@ -397,7 +399,8 @@
                     name: productName,
                     price: price,
                     quantity: 1,
-                    totalPrice: price
+                    totalPrice: price,
+                    image: productImage
                 };
                 cartItems.push(existingItem);
             }

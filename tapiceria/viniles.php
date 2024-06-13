@@ -320,26 +320,28 @@
 
     <!-- Sección de Productos -->
     <div class="container-products">
-        <div class="card-product" data-name="Viniles 1" data-price="650">
+        <!-- Añade la URL de la imagen en el atributo data-image y pásala al addToCart -->
+        <div class="card-product" data-name="Viniles 1" data-price="650" data-image="../assets/alfombras2.jpg">
             <div class="container1-img">
                 <img src="../assets/alfombras2.jpg" alt="Viniles 1">
             </div>
             <div class="content-product">
                 <h3>Viniles 1</h3>
                 <p>Precio: $650</p>
-                <button class="btn btn-comprar" onclick="addToCart('Viniles 1', 650)">Comprar</button>
+                <button class="btn btn-comprar" onclick="addToCart('Viniles 1', 650, '../assets/alfombras2.jpg')">Comprar</button>
             </div>
         </div>
-        <div class="card-product" data-name="Viniles 2" data-price="250">
+        <div class="card-product" data-name="Viniles 2" data-price="250" data-image="../assets/alfombras2.jpg">
             <div class="container1-img">
                 <img src="../assets/alfombras2.jpg" alt="Viniles 2">
             </div>
             <div class="content-product">
                 <h3>Viniles 2</h3>
                 <p>Precio: $250</p>
-                <button class="btn btn-comprar" onclick="addToCart('Viniles 2', 250)">Comprar</button>
+                <button class="btn btn-comprar" onclick="addToCart('Viniles 2', 250, '../assets/alfombras2.jpg')">Comprar</button>
             </div>
         </div>
+
     </div>
 
     <!-- Footer -->
@@ -387,6 +389,8 @@
             const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
             let existingItem = cartItems.find(item => item.name === productName);
 
+            const productImage = document.querySelector(`.card-product[data-name="${productName}"] img`).src;
+
             if (existingItem) {
                 existingItem.quantity++;
                 existingItem.totalPrice += price;
@@ -395,7 +399,8 @@
                     name: productName,
                     price: price,
                     quantity: 1,
-                    totalPrice: price
+                    totalPrice: price,
+                    image: productImage
                 };
                 cartItems.push(existingItem);
             }

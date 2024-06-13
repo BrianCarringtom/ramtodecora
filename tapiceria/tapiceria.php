@@ -320,34 +320,34 @@
 
     <!-- Sección de Productos -->
     <div class="container-products">
-        <div class="card-product" data-name="Tapete 1" data-price="100">
+        <div class="card-product" data-name="Tapete 1" data-price="100" data-image="../assets/alfombras2.jpg">
             <div class="container1-img">
                 <img src="../assets/alfombras2.jpg" alt="Tapete 1">
             </div>
             <div class="content-product">
                 <h3>Tapete 1</h3>
                 <p>Precio: $100</p>
-                <button class="btn btn-comprar" onclick="addToCart('Tapete 1', 100)">Comprar</button>
+                <button class="btn btn-comprar" onclick="addToCart('Tapete 1', 100, '../assets/alfombras2.jpg')">Comprar</button>
             </div>
         </div>
-        <div class="card-product" data-name="Tapete 2" data-price="200">
+        <div class="card-product" data-name="Tapete 2" data-price="200" data-image="../assets/alfombras2.jpg">
             <div class="container1-img">
                 <img src="../assets/alfombras2.jpg" alt="Tapete 2">
             </div>
             <div class="content-product">
                 <h3>Tapete 2</h3>
                 <p>Precio: $200</p>
-                <button class="btn btn-comprar" onclick="addToCart('Tapete 2', 200)">Comprar</button>
+                <button class="btn btn-comprar" onclick="addToCart('Tapete 2', 200, '../assets/alfombras2.jpg')">Comprar</button>
             </div>
         </div>
-        <div class="card-product" data-name="Tapete 3" data-price="100">
+        <div class="card-product" data-name="Tapete 3" data-price="100" data-image="../assets/alfombras2.jpg">
             <div class="container1-img">
                 <img src="../assets/alfombras2.jpg" alt="Tapete 3">
             </div>
             <div class="content-product">
                 <h3>Tapete 3</h3>
                 <p>Precio: $100</p>
-                <button class="btn btn-comprar" onclick="addToCart('Tapete 3', 100)">Comprar</button>
+                <button class="btn btn-comprar" onclick="addToCart('Tapete 3', 100, '../assets/alfombras2.jpg')">Comprar</button>
             </div>
         </div>
         <div class="card-product" data-name="Tapete 4" data-price="200">
@@ -407,6 +407,8 @@
             const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
             let existingItem = cartItems.find(item => item.name === productName);
 
+            const productImage = document.querySelector(`.card-product[data-name="${productName}"] img`).src;
+
             if (existingItem) {
                 existingItem.quantity++;
                 existingItem.totalPrice += price;
@@ -415,7 +417,8 @@
                     name: productName,
                     price: price,
                     quantity: 1,
-                    totalPrice: price
+                    totalPrice: price,
+                    image: productImage
                 };
                 cartItems.push(existingItem);
             }
