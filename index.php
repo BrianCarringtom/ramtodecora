@@ -58,16 +58,29 @@
             /* Cambia el color del texto al pasar el cursor sobre el elemento */
         }
 
-        /* Estilos de Header */
+        /* Ajustar el CSS para el carrusel */
         .header {
             position: relative;
             height: 100vh;
-            background: url('assets/fondo1.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
+            overflow: hidden;
+            /* Oculta cualquier contenido desbordado */
+        }
+
+        .carousel-item {
+            height: 100vh;
+            width: 100vw;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .carousel-item img {
+            height: 100vh;
+            object-fit: cover;
         }
 
         .overlay {
@@ -77,7 +90,6 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
-            /* Fondo semi-transparente */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -409,15 +421,28 @@
     </nav>
 
 
-    <!-- Page Header -->
     <header class="header">
+        <div id="headerCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/fondo1.avif" class="d-block w-100" alt="Imagen 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/fondo2.jpg" class="d-block w-100" alt="Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/fondo4.avif" class="d-block w-100" alt="Imagen 3">
+                </div>
+            </div>
+        </div>
         <div class="overlay">
             <img src="assets/Logo.png" alt="Logo" class="logo">
-            <h1 class="subtitle">La mejor decoracion para tu HOGAR</h1>
-            <h1 class="title">BIENVENIDO A REMTO DECORACION</h1>
+            <h1 class="subtitle">La mejor decoración para tu HOGAR</h1>
+            <h1 class="title">BIENVENIDO A REMTO DECORACIÓN</h1>
             <a class="btn btn-primary mt-3" href="#about">INICIO</a>
         </div>
     </header>
+
 
     <section id="about" class="container-category">
         <!-- Producto 1 -->
@@ -592,6 +617,15 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#headerCarousel').carousel({
+                interval: 3000 // Cambia la imagen cada 3 segundos
+            });
+        });
+    </script>
+
 
 
 </body>
