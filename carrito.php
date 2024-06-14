@@ -39,7 +39,7 @@
                     <table class="table" id="cart-items-table">
                         <thead>
                             <tr>
-                                <th>Imagen</th> <!-- Nueva columna para la imagen -->
+                                <th>Imagen</th>
                                 <th>Producto</th>
                                 <th>Precio</th>
                                 <th>Cantidad</th>
@@ -49,7 +49,6 @@
                         </thead>
                         <tbody id="cart-items"></tbody>
                     </table>
-
                 </div>
                 <div class="dropdown-divider"></div>
                 <div class="dropdown-item-text">Total: $<span id="cart-total">0.00</span></div>
@@ -81,7 +80,6 @@
                         <li><a href="https://www.santander.com.mx/" target="_blank">Pagar con Banco Santander</a></li>
                         <li><a href="https://www.banorte.com/" target="_blank">Pagar con Banorte</a></li>
                         <li><a href="https://www.bancomer.com/" target="_blank">Pagar con Bancomer</a></li>
-                        <!-- Agrega más opciones de pago según sea necesario -->
                     </ul>
                 </div>
                 <div class="modal-footer">
@@ -128,7 +126,7 @@
                 const actionsCell = document.createElement('td');
 
                 const incrementButton = createButton('+', 'btn-success', function() {
-                    addToCart(item.name, item.price);
+                    addToCart(item.name, item.price, item.image);
                 });
 
                 const decrementButton = createButton('-', 'btn-warning', function() {
@@ -164,11 +162,9 @@
             document.getElementById('cart-total').innerText = totalPrice.toFixed(2);
         }
 
-        function addToCart(productName, price) {
+        function addToCart(productName, price, image) {
             const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
             let existingItem = cartItems.find(item => item.name === productName);
-
-            const productImage = document.querySelector(`.card-product[data-name="${productName}"] img`).src;
 
             if (existingItem) {
                 existingItem.quantity++;
@@ -179,7 +175,7 @@
                     price: price,
                     quantity: 1,
                     totalPrice: price,
-                    image: productImage
+                    image: image
                 };
                 cartItems.push(existingItem);
             }
