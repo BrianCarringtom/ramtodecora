@@ -360,6 +360,17 @@
                 transform: translateY(-10px);
             }
         }
+
+        .animated {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .animated-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 
 </head>
@@ -446,7 +457,7 @@
 
     <section id="about" class="container-category">
         <!-- Producto 1 -->
-        <div class="card-category">
+        <div class="card-category animated">
             <div class="container-img">
                 <img src="assets/Plantas.jpg" alt="Plantas" />
             </div>
@@ -457,7 +468,7 @@
         </div>
 
         <!-- Producto 2 -->
-        <div class="card-category">
+        <div class="card-category animated">
             <div class="container-img">
                 <img src="assets/Cortinas.jpg" alt="Cortinas y Persianas" />
             </div>
@@ -468,7 +479,7 @@
         </div>
 
         <!-- Producto 3 -->
-        <div class="card-category">
+        <div class="card-category animated">
             <div class="container-img">
                 <img src="assets/Alfombras.jpg" alt="Alfombras" />
             </div>
@@ -479,7 +490,7 @@
         </div>
 
         <!-- Producto 4 -->
-        <div class="card-category">
+        <div class="card-category animated">
             <div class="container-img">
                 <img src="assets/Exterior.jpg" alt="Exterior" />
             </div>
@@ -491,9 +502,9 @@
     </section>
 
     <section class="container products">
-        <h2 class="heading-1">Productos</h2>
+        <h2 class="heading-1" style="font-weight: bold;">Productos</h2>
         <div class="container-products">
-            <div class="card-product">
+            <div class="card-product animated">
                 <div class="container1-img">
                     <img src="assets/Alfombras2.jpg" alt="" />
                 </div>
@@ -501,7 +512,7 @@
                     <h3>Cortinas prega inglesa</h3>
                 </div>
             </div>
-            <div class="card-product">
+            <div class="card-product animated">
                 <div class="container1-img">
                     <img src="assets/Alfombras2.jpg" alt="" />
                 </div>
@@ -509,7 +520,7 @@
                     <h3>Persinas enrollables de cinta</h3>
                 </div>
             </div>
-            <div class="card-product">
+            <div class="card-product animated">
                 <div class="container1-img">
                     <img src="assets/Alfombras2.jpg" alt="" />
                 </div>
@@ -517,7 +528,7 @@
                     <h3>Patas decorativas</h3>
                 </div>
             </div>
-            <div class="card-product">
+            <div class="card-product animated">
                 <div class="container1-img">
                     <img src="assets/Alfombras2.jpg" alt="" />
                 </div>
@@ -525,7 +536,7 @@
                     <h3>Tapiceria</h3>
                 </div>
             </div>
-            <div class="card-product">
+            <div class="card-product animated">
                 <div class="container1-img">
                     <img src="assets/Alfombras2.jpg" alt="" />
                 </div>
@@ -533,7 +544,7 @@
                     <h3>Tapete</h3>
                 </div>
             </div>
-            <div class="card-product">
+            <div class="card-product animated">
                 <div class="container1-img">
                     <img src="assets/Alfombras2.jpg" alt="" />
                 </div>
@@ -541,7 +552,7 @@
                     <h3>Pisos Antiderrantes</h3>
                 </div>
             </div>
-            <div class="card-product">
+            <div class="card-product animated">
                 <div class="container1-img">
                     <img src="assets/Alfombras2.jpg" alt="" />
                 </div>
@@ -549,7 +560,7 @@
                     <h3>Captus</h3>
                 </div>
             </div>
-            <div class="card-product">
+            <div class="card-product animated">
                 <div class="container1-img">
                     <img src="assets/Alfombras2.jpg" alt="" />
                 </div>
@@ -557,7 +568,7 @@
                     <h3>Cortinas Presillas</h3>
                 </div>
             </div>
-            <div class="card-product">
+            <div class="card-product animated">
                 <div class="container1-img">
                     <img src="assets/Alfombras2.jpg" alt="" />
                 </div>
@@ -565,7 +576,7 @@
                     <h3>Pisos Antiderrantes</h3>
                 </div>
             </div>
-            <div class="card-product">
+            <div class="card-product animated">
                 <div class="container1-img">
                     <img src="assets/Alfombras2.jpg" alt="" />
                 </div>
@@ -622,6 +633,22 @@
         $(document).ready(function() {
             $('#headerCarousel').carousel({
                 interval: 3000 // Cambia la imagen cada 3 segundos
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let animatedElements = document.querySelectorAll(".animated");
+
+            let observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animated-visible");
+                    }
+                });
+            });
+
+            animatedElements.forEach(element => {
+                observer.observe(element);
             });
         });
     </script>

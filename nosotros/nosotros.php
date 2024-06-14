@@ -9,7 +9,7 @@
     <title>Nosotros</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> <!-- AOS CSS -->
     <style>
         body {
             padding-top: 56px;
@@ -29,11 +29,34 @@
             margin-bottom: 60px;
         }
 
-        /* Estilos del Footer */
+        .section {
+            padding: 100px 0;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        #mision {
+            background-image: url('../assets/mision.jpeg');
+        }
+
+        #vision {
+            background-image: url('../assets/vision.jpg');
+        }
+
+        #horarios {
+            background-image: url('../assets/horario.avif');
+        }
+
+        .section-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 60px;
+        }
+
         .footer,
         .py-4 {
             background-color: #343a40;
-            /* Fondo oscuro */
             color: white;
             padding-top: 40px;
             padding-bottom: 20px;
@@ -49,7 +72,6 @@
             margin-right: 15px;
             text-decoration: none;
             margin-left: 20px;
-            /* Add some spacing between links */
         }
 
         .social-link i {
@@ -58,7 +80,6 @@
 
         .navbar-nav:hover {
             background-color: #343a40;
-            /* Color de fondo al hacer hover */
         }
 
         .navbar-nav .nav-item .nav-link {
@@ -67,7 +88,6 @@
 
         .navbar-nav .nav-item .nav-link:hover {
             color: #FF0000;
-            /* Color de texto al hacer hover */
         }
 
         .nav-item.dropdown:hover .dropdown-menu {
@@ -76,9 +96,7 @@
 
         .dropdown-item:hover {
             background-color: rgba(255, 255, 255, 0.1);
-            /* Cambia el color de fondo al pasar el cursor sobre el elemento */
             color: red !important;
-            /* Cambia el color del texto al pasar el cursor sobre el elemento */
         }
     </style>
 </head>
@@ -140,14 +158,16 @@
     </nav>
 
     <!-- Mission Section -->
-    <section id="mision" class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center section-title">
-                    <h2><i class="fas fa-user"></i> Misión</h2>
-                </div>
-                <div class="col-md-12 section-content">
-                    <p class="text-center">Te brindamos soluciones de decoración con nuestra amplia variedad de cortinas, telas decorativas, tapices, alfombras, tapetes y accesorios decorativos.</p>
+    <section id="mision" class="section" data-aos="fade-up">
+        <div class="section-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center section-title">
+                        <h2><i class="fas fa-user"></i> Misión</h2>
+                    </div>
+                    <div class="col-md-12 section-content">
+                        <p class="text-center">Te brindamos soluciones de decoración con nuestra amplia variedad de cortinas, telas decorativas, tapices, alfombras, tapetes y accesorios decorativos.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -155,14 +175,16 @@
     <!-- End of Mission Section -->
 
     <!-- Visión Section -->
-    <section id="vision" class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center section-title">
-                    <h2><i class="fas fa-eye"></i> Visión</h2>
-                </div>
-                <div class="col-md-12 section-content">
-                    <p class="text-center">Somos una empresa comercializadora, diseñadora y productora de artículos de decoración entre los que destacan textiles decorativos para uso interior y exterior. Contamos con un sistema integral de servicios que complementan nuestros productos, como la limpieza y el recubrimiento de teflón para el cuidado de los tapices.</p>
+    <section id="vision" class="section" data-aos="fade-up">
+        <div class="section-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center section-title">
+                        <h2><i class="fas fa-eye"></i> Visión</h2>
+                    </div>
+                    <div class="col-md-12 section-content">
+                        <p class="text-center">Somos una empresa comercializadora, diseñadora y productora de artículos de decoración entre los que destacan textiles decorativos para uso interior y exterior. Contamos con un sistema integral de servicios que complementan nuestros productos, como la limpieza y el recubrimiento de teflón para el cuidado de los tapices.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -170,23 +192,24 @@
     <!-- End of Vision Section -->
 
     <!-- Horarios Section -->
-    <section id="horarios" class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center section-title">
-                    <h2><i class="far fa-clock"></i> Horarios</h2>
-                </div>
-                <div class="col-md-12 section-content">
-                    <p class="text-center"><strong>Lunes a Viernes:</strong> 8:30 - 14:00 y 16:00 - 19:00</p>
-                    <p class="text-center"><strong>Sábados:</strong> 8:30 - 14:00</p>
-                    <p class="text-center"><strong>Domingos:</strong> Cerrado</p>
-                    <div id="reloj" class="text-center"></div> <!-- Aquí se mostrará el reloj -->
+    <section id="horarios" class="section" data-aos="fade-up">
+        <div class="section-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center section-title">
+                        <h2><i class="far fa-clock"></i> Horarios</h2>
+                    </div>
+                    <div class="col-md-12 section-content">
+                        <p class="text-center"><strong>Lunes a Viernes:</strong> 8:30 - 14:00 y 16:00 - 19:00</p>
+                        <p class="text-center"><strong>Sábados:</strong> 8:30 - 14:00</p>
+                        <p class="text-center"><strong>Domingos:</strong> Cerrado</p>
+                        <div id="reloj" class="text-center"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- End of Horarios Section -->
-
 
     <!-- Footer -->
     <footer class="footer">
@@ -208,7 +231,7 @@
                     <img src="../assets/Logo.png" alt="Logo" class="logo mt-4">
                 </div>
                 <div class="col-md-4">
-                    <h5>Descripcion</h5>
+                    <h5>Descripción</h5>
                     <p>Somos una empresa comercializadora, diseñadora y productora de artículos de decoración, limpieza y el recubrimiento de teflón para el cuidado de los tapices.</p>
                 </div>
             </div>
@@ -223,7 +246,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> <!-- AOS JS -->
     <script>
+        AOS.init(); // Inicializar AOS
+
         // Función para obtener la fecha y hora actualizada
         function actualizarReloj() {
             var fechaHora = new Date();
@@ -231,22 +257,17 @@
             var minutos = fechaHora.getMinutes();
             var segundos = fechaHora.getSeconds();
 
-            // Formateo para asegurar que siempre haya dos dígitos
             horas = (horas < 10) ? "0" + horas : horas;
             minutos = (minutos < 10) ? "0" + minutos : minutos;
             segundos = (segundos < 10) ? "0" + segundos : segundos;
 
-            // Construir el string con la hora
             var horaActual = horas + ":" + minutos + ":" + segundos;
 
-            // Actualizar el contenido del elemento con id "reloj"
             document.getElementById("reloj").innerHTML = "<strong>Fecha y Hora:</strong> " + fechaHora.toLocaleDateString() + " " + horaActual;
 
-            // Llamar a esta función nuevamente cada segundo para actualizar el reloj
             setTimeout(actualizarReloj, 1000);
         }
 
-        // Llamar a la función para que comience a actualizar el reloj
         actualizarReloj();
     </script>
 
