@@ -20,15 +20,69 @@
             max-height: 40px;
         }
 
-        .section-title {
-            margin-top: 60px;
-            margin-bottom: 30px;
+        .header {
+            position: relative;
+            height: 50vh;
+            /* Ajusta la altura como desees */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             text-align: center;
+            overflow: hidden;
+            background-image: url('images/Fondopromo.jpg');
+            background-size: cover;
+            background-position: center;
+            /* Ajusta el border de las esquinas */
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
         }
 
-        .section-content {
-            margin-bottom: 60px;
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* Espacio entre los elementos */
+            padding: 0 20px;
+            /* Añade un poco de padding a los lados */
         }
+
+        .header-content {
+            display: flex;
+            justify-content: flex-end;
+            /* Alinear al contenido al extremo derecho */
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .title-subtitle {
+            text-align: right;
+            margin-bottom: 80px;
+            /* Alinear el texto dentro de title-subtitle a la derecha */
+        }
+
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 0;
+            /* Elimina el margen inferior del título */
+        }
+
+        .subtitle {
+            font-size: 24px;
+            margin-top: 5px;
+            /* Añade un pequeño margen superior al subtítulo */
+        }
+
 
         /* Estilos del Footer */
         .footer,
@@ -198,6 +252,17 @@
         </div>
     </nav>
 
+    <header class="header">
+        <div class="overlay">
+            <div class="header-content">
+                <div class="title-subtitle">
+                    <h1 class="title">"Ofertas de Temporada: ¡No te las Pierdas!"</h1>
+                    <h2 class="subtitle">"¡Aprovecha esta oferta única! Descuentos exclusivos"</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <!-- Promociones Section -->
     <section class="container mt-5">
         <h2 class="section-title">PROMOCIONES ESPECIALES</h2>
@@ -241,7 +306,7 @@
         </div>
     </section>
 
-    
+
 
     <!-- Footer -->
     <footer class="footer">
