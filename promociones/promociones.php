@@ -27,7 +27,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: black;
             text-align: center;
             overflow: hidden;
             background-image: url('images/Fondopromo.jpg');
@@ -46,7 +46,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
             display: flex;
             align-items: center;
             justify-content: space-between;
