@@ -82,57 +82,12 @@
             /* Añade un pequeño margen superior al subtítulo */
         }
 
-
-        /* Estilos del Footer */
-        .footer,
-        .py-4 {
-            background-color: #343a40;
-            /* Fondo oscuro */
-            color: white;
-            padding-top: 40px;
-            padding-bottom: 20px;
-        }
-
-        .logo {
-            max-width: 200px;
-            margin-bottom: 20px;
-        }
-
-        .social-link {
-            color: white;
-            margin-right: 15px;
-            text-decoration: none;
-            margin-left: 20px;
-            /* Add some spacing between links */
-        }
-
-        .social-link i {
-            margin-right: 5px;
-        }
-
-        .navbar-nav:hover {
-            background-color: #343a40;
-            /* Color de fondo al hacer hover */
-        }
-
-        .navbar-nav .nav-item .nav-link {
-            transition: color 0.3s;
-        }
-
-        .navbar-nav .nav-item .nav-link:hover {
-            color: #FF0000;
-            /* Color de texto al hacer hover */
-        }
-
-        .nav-item.dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-        .dropdown-item:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            /* Cambia el color de fondo al pasar el cursor sobre el elemento */
-            color: red !important;
-            /* Cambia el color del texto al pasar el cursor sobre el elemento */
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
         }
 
         .promocion {
@@ -142,6 +97,7 @@
             margin-bottom: 20px;
             background-color: #fff;
             transition: all 0.3s ease;
+            height: 100%;
         }
 
         .promocion:hover {
@@ -192,6 +148,60 @@
         .ver-mas-btn:hover {
             background-color: rgba(0, 86, 179, 0.7);
         }
+
+        /* Estilos del Footer */
+        .footer,
+        .py-4 {
+            background-color: #343a40;
+            /* Fondo oscuro */
+            color: white;
+            padding-top: 40px;
+            padding-bottom: 20px;
+            margin-top: 40px;
+            /* Ajuste para separar del contenido anterior */
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+            margin-left: 20px;
+            /* Add some spacing between links */
+        }
+
+        .social-link i {
+            margin-right: 5px;
+        }
+
+        .navbar-nav:hover {
+            background-color: #343a40;
+            /* Color de fondo al hacer hover */
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: #FF0000;
+            /* Color de texto al hacer hover */
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Cambia el color de fondo al pasar el cursor sobre el elemento */
+            color: red !important;
+            /* Cambia el color del texto al pasar el cursor sobre el elemento */
+        }
     </style>
 </head>
 
@@ -216,7 +226,8 @@
                             DECORACIÓN
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDecoracion">
-                            <a class="dropdown-item" href="../decoracion/cortinasypercianas.php">Cortinas y Persianas</a>
+                            <a class="dropdown-item" href="../decoracion/cortinasypercianas.php">Cortinas y
+                                Persianas</a>
                             <a class="dropdown-item" href="../decoracion/acabados.php">Acabados</a>
                             <a class="dropdown-item" href="../decoracion/pisos.php">Pisos</a>
                             <a class="dropdown-item" href="../decoracion/pinturas.php">Pinturas</a>
@@ -274,6 +285,7 @@
                     <p class="price"><span class="original-price">$100.00</span>
                         <span class="discounted-price">$75.00</span>
                         <span class="discount-percentage">25%</span>
+                    </p>
                     <p>Aprovecha un 20% de descuento en todos los productos electrónicos. ¡No te lo pierdas!.</p>
                     <a href="detalles.php?promoId=1" class="ver-mas-btn">Ver más</a>
                 </div>
@@ -286,6 +298,7 @@
                     <p class="price"><span class="original-price">$200.00</span>
                         <span class="discounted-price">$150.00</span>
                         <span class="discount-percentage">25%</span>
+                    </p>
                     <p>Compra una prenda y llévate otra gratis. ¡Renueva tu armario hoy mismo!.</p>
                     <a href="detalles.php?promoId=2" class="ver-mas-btn">Ver más</a>
                 </div>
@@ -298,14 +311,13 @@
                     <p class="price"><span class="original-price">$500.00</span>
                         <span class="discounted-price">$250.00</span>
                         <span class="discount-percentage">50%</span>
+                    </p>
                     <p>Obtén envío gratis en todas tus compras superiores a $50. ¡Aprovecha ya!.</p>
                     <a href="detalles.php?promoId=3" class="ver-mas-btn">Ver más</a>
                 </div>
             </div>
         </div>
     </section>
-
-
 
     <!-- Footer -->
     <footer class="footer">
