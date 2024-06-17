@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            background: radial-gradient(circle, #ffffff, #00008B);
+            background: #515ae1;
             min-height: 100vh;
             margin: 0;
             display: flex;

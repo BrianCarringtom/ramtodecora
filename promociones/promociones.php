@@ -13,11 +13,45 @@
     <style>
         body {
             padding-top: 56px;
-            background: radial-gradient(circle, #ffffff, #00008B);
+            background: white;
         }
 
         .navbar-brand img {
             max-height: 40px;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-nav .nav-link {
+            color: #515ae1 !important;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: white !important;
+            border-radius: 20px;
+            background-color: #515ae1;
+            /* Cambia el color al pasar el cursor sobre el enlace */
+        }
+
+        .dropdown-item:hover {
+            color: white !important;
+            background-color: #515ae1;
+        }
+
+        /* Estilos para el botón de navegación en dispositivos móviles */
+        @media (max-width: 991.98px) {
+            .navbar-dark .navbar-toggler {
+                background-color: rgba(0, 0, 0, 0.5);
+                /* Fondo semi-transparente en modo oscuro */
+            }
+
+            .navbar-dark .navbar-toggler-icon {
+                color: #515ae1;
+                /* Color del ícono del botón */
+            }
         }
 
         .header {
@@ -176,23 +210,24 @@
         .ver-mas-btn {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #515ae1;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
-            transition: background-color 0.3s ease;
         }
 
         .ver-mas-btn:hover {
-            background-color: rgba(0, 86, 179, 0.7);
+            color: #fff;
+            transition: background-color 0.3s ease;
+            background-color: rgba(81, 90, 225, 1);
         }
 
         /* Estilos del Footer */
         .footer,
         .py-4 {
-            background-color: #343a40;
+            background-color: #515ae1;
             /* Fondo oscuro */
             color: white;
             padding-top: 40px;
@@ -217,38 +252,13 @@
         .social-link i {
             margin-right: 5px;
         }
-
-        .navbar-nav:hover {
-            background-color: #343a40;
-            /* Color de fondo al hacer hover */
-        }
-
-        .navbar-nav .nav-item .nav-link {
-            transition: color 0.3s;
-        }
-
-        .navbar-nav .nav-item .nav-link:hover {
-            color: #FF0000;
-            /* Color de texto al hacer hover */
-        }
-
-        .nav-item.dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-        .dropdown-item:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            /* Cambia el color de fondo al pasar el cursor sobre el elemento */
-            color: red !important;
-            /* Cambia el color del texto al pasar el cursor sobre el elemento */
-        }
     </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="56">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="../assets/Logo.png" alt="Logo de RAMTO Decoración">

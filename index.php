@@ -13,7 +13,7 @@
     <style>
         /* Estilos Generales */
         body {
-            background: radial-gradient(circle, #ffffff, #00008B);
+            background: white;
         }
 
         .container {
@@ -22,40 +22,42 @@
             padding: 0 20px;
         }
 
-        .bg-custom {
-            background: linear-gradient(30deg, royalblue, red);
-        }
-
-        /* Estilos de Navegación */
-        .nav-first {
-            background-color: rgba(0, 0, 0, 0.7);
-            /* Fondo semi-transparente */
-            padding: 10px 0;
-        }
-
-        .nav-second {
-            background-color: rgba(0, 0, 0, 0.9);
-            /* Fondo más oscuro */
-        }
-
         .navbar-brand img {
             max-height: 40px;
         }
 
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
         .navbar-nav .nav-link {
-            color: white !important;
+            color: #515ae1 !important;
+            font-weight: bold;
         }
 
         .navbar-nav .nav-link:hover {
-            color: red !important;
+            color: white !important;
+            border-radius: 20px;
+            background-color: #515ae1;
             /* Cambia el color al pasar el cursor sobre el enlace */
         }
 
         .dropdown-item:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            /* Cambia el color de fondo al pasar el cursor sobre el elemento */
-            color: red !important;
-            /* Cambia el color del texto al pasar el cursor sobre el elemento */
+            color: white !important;
+            background-color: #515ae1;
+        }
+
+        /* Estilos para el botón de navegación en dispositivos móviles */
+        @media (max-width: 991.98px) {
+            .navbar-dark .navbar-toggler {
+                background-color: rgba(0, 0, 0, 0.5);
+                /* Fondo semi-transparente en modo oscuro */
+            }
+
+            .navbar-dark .navbar-toggler-icon {
+                color: #515ae1;
+                /* Color del ícono del botón */
+            }
         }
 
         /* Ajustar el CSS para el carrusel */
@@ -222,7 +224,7 @@
             background: #fff;
             border-radius: 0 25px 25px 25px;
             /* Establece el radio de borde para cada esquina */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             width: 200px;
             text-align: center;
             overflow: hidden;
@@ -236,7 +238,7 @@
 
         .card-category:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
 
         .container-img img {
@@ -291,8 +293,7 @@
         /* Estilos del Footer */
         .footer,
         .py-4 {
-            background-color: #343a40;
-            /* Fondo oscuro */
+            background-color: #515ae1;
             color: white;
             padding-top: 40px;
             padding-bottom: 20px;
@@ -312,10 +313,6 @@
 
         .text-right {
             text-align: right;
-        }
-
-        .nav-item.dropdown:hover .dropdown-menu {
-            display: block;
         }
 
         /* Estilos del ícono de WhatsApp */
@@ -378,7 +375,7 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="56">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="assets/Logo.png" alt="Logo de RAMTO Decoración">
