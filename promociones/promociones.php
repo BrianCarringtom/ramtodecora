@@ -13,7 +13,7 @@
     <style>
         body {
             padding-top: 56px;
-            background: linear-gradient(to bottom, #b3e0ff, #ffffff);
+            background: radial-gradient(circle, #ffffff, #00008B);
         }
 
         .navbar-brand img {
@@ -23,7 +23,6 @@
         .header {
             position: relative;
             height: 50vh;
-            /* Ajusta la altura como desees */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -33,7 +32,6 @@
             background-image: url('images/Fondopromo.jpg');
             background-size: cover;
             background-position: center;
-            /* Ajusta el border de las esquinas */
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             border-bottom-left-radius: 40px;
@@ -49,15 +47,12 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            /* Espacio entre los elementos */
             padding: 0 20px;
-            /* Añade un poco de padding a los lados */
         }
 
         .header-content {
             display: flex;
             justify-content: flex-end;
-            /* Alinear al contenido al extremo derecho */
             width: 100%;
             max-width: 1200px;
         }
@@ -65,22 +60,64 @@
         .title-subtitle {
             text-align: right;
             margin-bottom: 80px;
-            /* Alinear el texto dentro de title-subtitle a la derecha */
         }
 
-
         .title {
-            font-size: 36px;
+            font-size: 2.25rem;
+            /* 36px */
             font-weight: bold;
             margin-bottom: 0;
-            /* Elimina el margen inferior del título */
         }
 
         .subtitle {
-            font-size: 24px;
+            font-size: 1.5rem;
+            /* 24px */
             margin-top: 5px;
-            /* Añade un pequeño margen superior al subtítulo */
         }
+
+        /* Media Queries para responsividad */
+        @media (max-width: 1200px) {
+            .title {
+                font-size: 2rem;
+                /* Ajusta el tamaño para pantallas más pequeñas */
+            }
+
+            .subtitle {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .title-subtitle {
+                margin-bottom: 60px;
+                /* Ajusta el margen para pantallas medianas */
+            }
+
+            .title {
+                font-size: 1.75rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title-subtitle {
+                margin-bottom: 40px;
+                /* Ajusta el margen para pantallas pequeñas */
+            }
+
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 0.875rem;
+                /* 14px */
+            }
+        }
+
 
         .section-title {
             font-size: 24px;
@@ -91,17 +128,20 @@
         }
 
         .promocion {
-            border: 1px solid #ddd;
+            border: 1px solid #000;
+            /* Borde negro */
             border-radius: 5px;
             padding: 20px;
             margin-bottom: 20px;
             background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            /* Sombra */
             transition: all 0.3s ease;
             height: 100%;
         }
 
         .promocion:hover {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
         .promocion img {

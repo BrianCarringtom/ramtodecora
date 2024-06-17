@@ -13,7 +13,7 @@
     <style>
         body {
             padding-top: 56px;
-            background: linear-gradient(to bottom, #b3e0ff, #ffffff);
+            background: radial-gradient(circle, #ffffff, #00008B);
         }
 
         .navbar-brand img {
@@ -30,16 +30,20 @@
             margin: 50px auto;
             padding: 20px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
             border-radius: 8px;
         }
 
         .detalle-promocion img {
             max-width: 100%;
-            /* Ajuste para hacer la imagen responsive */
+            /* Hacer que la imagen ocupe el máximo ancho disponible */
+            max-height: 300px;
+            /* Limitar la altura máxima de la imagen */
             height: auto;
+            /* Ajustar automáticamente la altura */
             display: block;
             margin: 20px auto;
+            /* Centrar la imagen dentro del contenedor */
         }
 
         .detalle-promocion h2 {
@@ -91,14 +95,6 @@
         .volver-btn:hover {
             background-color: rgba(0, 86, 179, 0.7);
             color: #fff;
-        }
-
-        .detalle-promocion img {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            display: block;
-            margin: 20px auto;
         }
 
         .footer {
@@ -207,14 +203,27 @@
     </nav>
 
     <section class="detalle-promocion">
-        <h2 id="promo-title">Título de la Promoción</h2>
-        <img id="promo-image" src="" alt="Imagen de la Promoción">
-        <p id="promo-description">Descripción de la Promoción</p>
-        <p class="price"><span id="original-price" class="original-price"></span> <span id="discounted-price" class="discounted-price"></span> <span id="discount-percentage" class="discount-percentage"></span></p>
-        <p id="promo-validity">Fecha de validez</p>
-        <p class="current-date"></p>
-        <a href="promociones.php" class="volver-btn">Volver a las promociones</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 order-md-2">
+                    <h2 id="promo-title">Título de la Promoción</h2>
+                    <p id="promo-description">Descripción de la Promoción</p>
+                    <p class="price">
+                        <span id="original-price" class="original-price"></span>
+                        <span id="discounted-price" class="discounted-price"></span>
+                        <span id="discount-percentage" class="discount-percentage"></span>
+                    </p>
+                    <p id="promo-validity">Fecha de validez</p>
+                    <p class="current-date"></p>
+                    <a href="promociones.php" class="volver-btn">Volver a las promociones</a>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <img id="promo-image" src="" alt="Imagen de la Promoción" class="img-fluid">
+                </div>
+            </div>
+        </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="footer">

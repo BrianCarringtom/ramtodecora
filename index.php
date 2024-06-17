@@ -13,7 +13,7 @@
     <style>
         /* Estilos Generales */
         body {
-            background: linear-gradient(to bottom, #b3e0ff, #ffffff);
+            background: radial-gradient(circle, #ffffff, #00008B);
         }
 
         .container {
