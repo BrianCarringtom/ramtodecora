@@ -281,6 +281,7 @@
 
         .btn-view-more:hover {
             background: #515ae1;
+            color: #fff;
             transform: scale(1.1);
         }
 

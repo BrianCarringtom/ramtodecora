@@ -493,6 +493,29 @@
             renderCartItems();
         });
 
+        function showAddedToCartMessage() {
+            const message = document.createElement('div');
+            message.textContent = 'Producto agregado al carrito';
+            message.style.position = 'fixed';
+            message.style.left = '50%';
+            message.style.top = '50%';
+            message.style.transform = 'translate(-50%, -50%)';
+            message.style.backgroundColor = '#515ae1';
+            message.style.color = '#fff';
+            message.style.padding = '10px 20px';
+            message.style.borderRadius = '5px';
+            message.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
+            message.style.zIndex = '1000';
+            message.style.textAlign = 'center';
+            message.style.fontSize = '16px';
+
+            document.body.appendChild(message);
+
+            setTimeout(() => {
+                message.remove();
+            }, 1000);
+        }
+
         function addToCart(productName, price) {
             const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
             let existingItem = cartItems.find(item => item.name === productName);
@@ -515,6 +538,7 @@
 
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
             renderCartItems();
+            showAddedToCartMessage(); // Llama a la función para mostrar el mensaje
         }
 
         function renderCartItems() {
