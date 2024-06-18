@@ -14,7 +14,6 @@
             margin: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
         }
 
         .container-custom {
@@ -184,7 +183,6 @@
         }
 
         .cart-count-label {
-            font-weight: bold;
             font-size: 1em;
             /* Ajuste del tamaño de fuente */
             color: black;
@@ -199,6 +197,42 @@
             /* Asegura que el número sea negro */
             border: 1px solid #dee2e6;
             /* Borde gris claro */
+        }
+
+        /* Estilos personalizados */
+        .btn-custom {
+            background-color: #515ae1;
+            /* Cambia el color de fondo a verde (ejemplo) */
+            border-color: #fff;
+            /* Cambia el color del borde */
+            color: #fff;
+            /* Cambia el color del texto a blanco */
+        }
+
+        .btn-custom:hover {
+            background-color: #fff;
+            /* Cambia el color de fondo al pasar el mouse */
+            border-color: #515ae1;
+            /* Cambia el color del borde al pasar el mouse */
+            color: #515ae1;
+        }
+
+        /* Si quieres cambiar también el color de fondo del botón Regresar */
+        #back-btn {
+            background-color: #515ae1;
+            /* Cambia el color de fondo a azul (ejemplo) */
+            border-color: #fff;
+            /* Cambia el color del borde */
+            color: #fff;
+            /* Cambia el color del texto a blanco */
+        }
+
+        #back-btn:hover {
+            background-color: #fff;
+            /* Cambia el color de fondo al pasar el mouse */
+            border-color: #515ae1;
+            /* Cambia el color del borde al pasar el mouse */
+            color: #515ae1;
         }
     </style>
 </head>
@@ -230,7 +264,7 @@
                     </div>
                     <div class="separator-line"></div>
                     <div class="d-flex justify-content-between align-items-center mt-3">
-                        <button class="btn btn-primary" id="back-btn">
+                        <button class="btn btn-custom" id="back-btn">
                             <i class="fas fa-arrow-left"></i> Regresar
                         </button>
                     </div>
@@ -245,7 +279,7 @@
                         <img src="assets/mastercard.png" alt="">
                     </div>
                     <div class="separator-line"></div>
-                    <button class="btn btn-primary mt-3" id="checkout-btn">
+                    <button class="btn btn-custom mt-3" id="checkout-btn">
                         Pagar <i class="fas fa-credit-card"></i>
                     </button>
                 </div>
