@@ -13,11 +13,45 @@
     <style>
         body {
             padding-top: 56px;
-            background: linear-gradient(to bottom, #b3e0ff, #ffffff);
+            background: white;
         }
 
         .navbar-brand img {
             max-height: 40px;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-nav .nav-link {
+            color: #515ae1 !important;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: white !important;
+            border-radius: 20px;
+            background-color: #515ae1;
+            /* Cambia el color al pasar el cursor sobre el enlace */
+        }
+
+        .dropdown-item:hover {
+            color: white !important;
+            background-color: #515ae1;
+        }
+
+        /* Estilos para el botón de navegación en dispositivos móviles */
+        @media (max-width: 991.98px) {
+            .navbar-dark .navbar-toggler {
+                background-color: rgba(0, 0, 0, 0.5);
+                /* Fondo semi-transparente en modo oscuro */
+            }
+
+            .navbar-dark .navbar-toggler-icon {
+                color: #515ae1;
+                /* Color del ícono del botón */
+            }
         }
 
         .section-title {
@@ -37,7 +71,7 @@
         /* Estilos del Footer */
         .footer,
         .py-4 {
-            background-color: #343a40;
+            background-color: #515ae1;
             /* Fondo oscuro */
             color: white;
             padding-top: 40px;
@@ -61,36 +95,32 @@
             margin-right: 5px;
         }
 
-        .navbar-nav:hover {
-            background-color: #343a40;
-        }
-
-        .navbar-nav .nav-item .nav-link {
-            transition: color 0.3s;
-        }
-
-        .navbar-nav .nav-item .nav-link:hover {
-            color: #FF0000;
-        }
-
-        .nav-item.dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-        .dropdown-item:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: red !important;
-        }
-
+        /* Ajustes para el carrusel */
         #carrusel {
             margin-top: 20px;
             margin-bottom: 20px;
+            max-height: 400px;
+            /* Reducimos la altura máxima del carrusel */
+            overflow: hidden;
+            /* Ocultamos el contenido que exceda la altura máxima */
         }
 
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: black;
+        #carouselExampleControls .carousel-item img {
+            max-height: 400px;
+            /* Ajustamos la altura máxima de las imágenes del carrusel */
+            width: auto;
+            /* Permitimos que el ancho se ajuste automáticamente */
         }
+
+        /* Si deseas ajustar el ancho del carrusel en dispositivos más pequeños, puedes agregar media queries aquí */
+
+        @media (max-width: 768px) {
+            #carrusel {
+                max-height: 300px;
+                /* Reducción de la altura en dispositivos más pequeños si es necesario */
+            }
+        }
+
 
         .container-products {
             display: grid;
@@ -134,7 +164,7 @@
             flex-direction: column;
             background: #fff;
             border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             margin-bottom: 30px;
         }
@@ -187,7 +217,7 @@
         }
 
         .btn-comprar {
-            background-color: #28a745;
+            background-color: #515ae1;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -201,7 +231,7 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="56">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="../assets/Logo.png" alt="Logo de RAMTO Decoración">
@@ -255,30 +285,23 @@
     </nav>
 
     <!-- Carrusel de Imágenes -->
-    <div id="carrusel" class="container">
+    <div id="carrusel" class="container-fluid">
         <h2 class="text-center">TAPICERIA</h2>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="fondo1.jpg" class="d-block w-50 mx-auto" alt="Imagen 1">
+                    <img src="fondo1.jpg" class="d-block w-100 mx-auto" alt="Imagen 1">
                 </div>
                 <div class="carousel-item">
-                    <img src="fondo1.jpg" class="d-block w-50 mx-auto" alt="Imagen 2">
+                    <img src="fondo1.jpg" class="d-block w-100 mx-auto" alt="Imagen 2">
                 </div>
                 <div class="carousel-item">
-                    <img src="fondo1.jpg" class="d-block w-50 mx-auto" alt="Imagen 3">
+                    <img src="fondo1.jpg" class="d-block w-100 mx-auto" alt="Imagen 3">
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Siguiente</span>
-            </a>
         </div>
     </div>
+
 
 
     <!-- Barra de búsqueda -->
@@ -296,26 +319,6 @@
                 <option value="name">Nombre <i class="fas fa-arrow-down"></i></option>
             </select>
         </div>
-
-        <!-- Tabla de Subcategorías -->
-        <table class="sub-nav-table">
-            <thead>
-                <tr>
-                    <th>Tapiceria</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="alfombras.php">Alfombras</a></td>
-                </tr>
-                <tr>
-                    <td><a href="viniles.php">Viniles</a></td>
-                </tr>
-                <tr>
-                    <td><a href="tapiceria.php">Tapicería</a></td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 
     <!-- Sección de Productos -->
