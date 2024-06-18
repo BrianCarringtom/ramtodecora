@@ -296,12 +296,17 @@
 
         .btn-comprar {
             background-color: #515ae1;
-            color: white;
-            border: none;
-            padding: 10px 15px;
+            color: #fff;
+            border: 1px solid #515ae1;
+            padding: 10px 20px;
             border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
+            transition: background-color 0.3s, color 0.3s;
+            /* Transición suave */
+        }
+
+        .btn-comprar:hover {
+            background-color: #fff;
+            color: #515ae1;
         }
     </style>
 </head>
