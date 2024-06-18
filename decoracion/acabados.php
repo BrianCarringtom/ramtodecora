@@ -6,18 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RAMTO Decoración - Soluciones en decoración y tapicería.">
     <meta name="author" content="Devcrud">
-    <title>Acabados</title>
+    <title>ACABADOS</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
             padding-top: 56px;
-            background: linear-gradient(to bottom, #b3e0ff, #ffffff);
+            background: white;
         }
 
         .navbar-brand img {
             max-height: 40px;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar-nav .nav-link {
+            color: #515ae1 !important;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: white !important;
+            border-radius: 20px;
+            background-color: #515ae1;
+            /* Cambia el color al pasar el cursor sobre el enlace */
+        }
+
+        .dropdown-item:hover {
+            color: white !important;
+            background-color: #515ae1;
+        }
+
+        /* Estilos para el botón de navegación en dispositivos móviles */
+        @media (max-width: 991.98px) {
+            .navbar-dark .navbar-toggler {
+                background-color: rgba(0, 0, 0, 0.5);
+                /* Fondo semi-transparente en modo oscuro */
+            }
+
+            .navbar-dark .navbar-toggler-icon {
+                color: #515ae1;
+                /* Color del ícono del botón */
+            }
         }
 
         .section-title {
@@ -37,7 +71,7 @@
         /* Estilos del Footer */
         .footer,
         .py-4 {
-            background-color: #343a40;
+            background-color: #515ae1;
             /* Fondo oscuro */
             color: white;
             padding-top: 40px;
@@ -61,36 +95,46 @@
             margin-right: 5px;
         }
 
-        .navbar-nav:hover {
-            background-color: #343a40;
+        .carrusel-titulo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            /* Cambia el color del texto según sea necesario */
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fondo semitransparente para mejorar la legibilidad */
+            padding: 10px 20px;
+            border-radius: 10px;
         }
 
-        .navbar-nav .nav-item .nav-link {
-            transition: color 0.3s;
-        }
-
-        .navbar-nav .nav-item .nav-link:hover {
-            color: #FF0000;
-        }
-
-        .nav-item.dropdown:hover .dropdown-menu {
-            display: block;
-        }
-
-        .dropdown-item:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: red !important;
-        }
-
+        /* Ajustes para el carrusel */
         #carrusel {
             margin-top: 20px;
             margin-bottom: 20px;
+            max-height: 200px;
+            /* Reducimos la altura máxima del carrusel */
+            overflow: hidden;
+            /* Ocultamos el contenido que exceda la altura máxima */
         }
 
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: black;
+        #carouselExampleControls .carousel-item img {
+            max-height: 200px;
+            /* Ajustamos la altura máxima de las imágenes del carrusel */
+            width: auto;
+            /* Permitimos que el ancho se ajuste automáticamente */
         }
+
+        /* Si deseas ajustar el ancho del carrusel en dispositivos más pequeños, puedes agregar media queries aquí */
+
+        @media (max-width: 768px) {
+            #carrusel {
+                max-height: 300px;
+                /* Reducción de la altura en dispositivos más pequeños si es necesario */
+            }
+        }
+
 
         .container-products {
             display: grid;
@@ -134,7 +178,7 @@
             flex-direction: column;
             background: #fff;
             border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             margin-bottom: 30px;
         }
@@ -160,6 +204,10 @@
             object-position: top;
         }
 
+        .card-product.filtered-out {
+            display: none;
+        }
+
         .content-product {
             padding: 10px;
             width: 100%;
@@ -173,21 +221,81 @@
             margin-bottom: 10px;
         }
 
+        .product-count-container {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            /* Ajusta el margen derecho según sea necesario */
+        }
+
+        #product-count {
+            margin-right: 10px;
+            /* Espacio entre el contador y el campo de búsqueda */
+            color: rgba(0, 0, 0, 0.5);
+            /* Color negro semi-transparente */
+        }
+
+        .search-sort-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+        }
+
         .search-bar {
-            width: 50%;
-            margin: 20px auto;
-            text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
         }
 
         .search-bar input {
-            width: 100%;
+            padding: 10px 20px 10px 10px;
+            font-size: 16px;
+            width: 300px;
+            border-radius: 25px;
+            border: 1px solid #ccc;
+        }
+
+        .search-bar i {
+            position: absolute;
+            right: 10px;
+            font-size: 20px;
+            color: #aaa;
+        }
+
+        .sort-menu {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .sort-menu label {
+            margin-right: 10px;
+        }
+
+        .sort-menu select {
             padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 991.98px) {
+            .search-sort-container {
+                flex-direction: column;
+                /* Apilamiento en dispositivos móviles */
+                align-items: stretch;
+                /* Estirar los elementos para ocupar el ancho completo */
+            }
+
+            .sort-menu {
+                margin-left: 0;
+                /* Elimina el margen izquierdo en móviles */
+                margin-top: 10px;
+                /* Agrega un poco de margen superior */
+            }
         }
 
         .btn-comprar {
-            background-color: #28a745;
+            background-color: #515ae1;
             color: white;
             border: none;
             padding: 10px 15px;
@@ -201,7 +309,7 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="56">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="../assets/Logo.png" alt="Logo de RAMTO Decoración">
@@ -255,79 +363,44 @@
     </nav>
 
     <!-- Carrusel de Imágenes -->
-    <div id="carrusel" class="container">
-        <h2 class="text-center">ACABADOS</h2>
+    <div id="carrusel" class="container-fluid position-relative">
+        <h2 class="text-center carrusel-titulo">ACABADOS</h2>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="fondo1.jpg" class="d-block w-50 mx-auto" alt="Imagen 1">
+                    <img src="fondopro.jpg" class="d-block w-100 mx-auto" alt="Imagen 1">
                 </div>
                 <div class="carousel-item">
-                    <img src="fondo1.jpg" class="d-block w-50 mx-auto" alt="Imagen 2">
+                    <img src="fondopro.jpg" class="d-block w-100 mx-auto" alt="Imagen 2">
                 </div>
                 <div class="carousel-item">
-                    <img src="fondo1.jpg" class="d-block w-50 mx-auto" alt="Imagen 3">
+                    <img src="fondopro.jpg" class="d-block w-100 mx-auto" alt="Imagen 3">
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Siguiente</span>
-            </a>
         </div>
     </div>
 
+    <div class="search-sort-container">
 
-    <!-- Barra de búsqueda -->
-    <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Buscar...">
-    </div>
+        <div class="product-count-container">
+            <span id="product-count"></span>
+        </div>
 
-    <div class="container">
+        <!-- Barra de búsqueda -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar...">
+            <i class="fas fa-search"></i>
+        </div>
+
         <!-- Menú de ordenamiento -->
-        <div class="sort-menu text-center">
+        <div class="sort-menu">
             <label for="sortOptions">Ordenar por:</label>
-            <select id="sortOptions" class="ml-2">
+            <select id="sortOptions">
                 <option value="default">Seleccionar</option>
-                <option value="price">Precio <i class="fas fa-arrow-down"></i></option>
-                <option value="name">Nombre <i class="fas fa-arrow-down"></i></option>
+                <option value="price">Precio</option>
+                <option value="name">Nombre</option>
             </select>
         </div>
-
-        <!-- Tabla de Subcategorías -->
-        <table class="sub-nav-table">
-            <thead>
-                <tr>
-                    <th>Acabados</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="cortinasypercianas.php">Cortinas y Percianas</a></td>
-                </tr>
-                <tr>
-                    <td><a href="acabados.php">Acabados</a></td>
-                </tr>
-                <tr>
-                    <td><a href="pisos.php">Pisos</a></td>
-                </tr>
-                <tr>
-                    <td><a href="pinturas.php">Pinturas</a></td>
-                </tr>
-                <tr>
-                    <td><a href="mantelerias.php">Mantelerias</a></td>
-                </tr>
-                <tr>
-                    <td><a href="plantas.php">Plantas</a></td>
-                </tr>
-                <tr>
-                    <td><a href="exterior.php">Exterior</a></td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 
     <!-- Sección de Productos -->
@@ -495,9 +568,23 @@
 
             products.forEach(function(product) {
                 const title = product.querySelector('h3').textContent.trim().toLowerCase();
-                product.style.display = title.includes(searchTerm) ? 'block' : 'none';
+                if (title.includes(searchTerm)) {
+                    product.classList.remove('filtered-out'); // Mostrar producto que coincide
+                } else {
+                    product.classList.add('filtered-out'); // Ocultar producto que no coincide
+                }
             });
+
+            // Recalcular el conteo de productos visibles
+            updateProductCount();
         });
+
+        function updateProductCount() {
+            const visibleProducts = document.querySelectorAll('.card-product:not(.filtered-out)');
+            const countElement = document.getElementById('product-count');
+            countElement.textContent = `Productos encontrados: ${visibleProducts.length}`;
+        }
+
 
         document.getElementById('sortOptions').addEventListener('change', function() {
             const sortBy = this.value;
@@ -525,6 +612,18 @@
                 }
             });
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener el contenedor de productos
+            const container = document.querySelector('.container-products');
+            // Obtener la lista de productos
+            const products = container.querySelectorAll('.card-product');
+            // Obtener el elemento donde se mostrará el conteo
+            const countElement = document.getElementById('product-count');
+
+            // Mostrar el número de productos encontrados
+            countElement.textContent = `Productos encontrados: ${products.length}`;
+        });
     </script>
 
 </body>

@@ -280,7 +280,7 @@
         }
 
         .btn-view-more:hover {
-            background: #000000;
+            background: #515ae1;
             transform: scale(1.1);
         }
 
@@ -368,6 +368,21 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        .custom-btn {
+            background-color: #515ae1;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .custom-btn:hover {
+            background-color: #fff;
+            color: #515ae1;
+        }
     </style>
 
 </head>
@@ -447,7 +462,7 @@
             <img src="assets/Logo.png" alt="Logo" class="logo">
             <h1 class="subtitle">La mejor decoración para tu HOGAR</h1>
             <h1 class="title">BIENVENIDO A REMTO DECORACIÓN</h1>
-            <a class="btn btn-primary mt-3" href="#about">INICIO</a>
+            <a class="btn btn-primary mt-3 custom-btn" href="#about">INICIO</a>
         </div>
     </header>
 
