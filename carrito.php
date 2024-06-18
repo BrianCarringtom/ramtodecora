@@ -54,25 +54,58 @@
             font-weight: bold;
         }
 
-        /* Quitar todas las líneas */
+        /* Añadir estilos para la tabla */
         .table {
             border-collapse: collapse;
+            width: 100%;
+            /* Ajustar al ancho deseado */
         }
 
         .table th,
         .table td {
             border: none !important;
             color: #666;
-            /* Cambiar color del texto a gris */
+            /* Color del texto a gris */
+            padding: 8px;
+            /* Ajustar padding de las celdas */
         }
 
-        .table tr {
-            border: none !important;
+        /* Estilo de las filas alternas */
+        .table tbody tr:nth-child(odd) {
+            background-color: #f9f9f9;
+            /* Fondo blanco para filas impares */
         }
 
+        /* Fijar la tabla y su contenedor */
+        .table-responsive {
+            overflow-x: auto;
+            /* Permitir scroll horizontal si es necesario */
+            max-height: 500px;
+            /* Ajustar altura máxima para scroll vertical */
+        }
+
+        /* Estilo para la cabecera de la tabla */
         .table thead th {
-            border-bottom: none !important;
+            position: sticky;
+            top: 0;
+            background-color: #ffffff;
+            /* Fondo blanco para la cabecera */
+            z-index: 1;
+            /* Asegurar que la cabecera esté sobre el contenido al hacer scroll */
         }
+
+        /* Estilo para las celdas de imagen */
+        .table td:first-child img {
+            max-width: 50px;
+            /* Ajustar tamaño máximo de las imágenes */
+            height: auto;
+            /* Mantener proporción */
+            display: block;
+            /* Evitar espacios extra alrededor de las imágenes */
+            margin: 0 auto;
+            /* Centrar las imágenes */
+        }
+
 
         /* Estilo para el contorno interno */
         .card-body {
@@ -149,6 +182,24 @@
             margin-top: 10px;
             padding-top: 5px;
         }
+
+        .cart-count-label {
+            font-weight: bold;
+            font-size: 1em;
+            /* Ajuste del tamaño de fuente */
+            color: black;
+            /* Color del texto */
+            margin-right: 5px;
+        }
+
+        #cart-count {
+            font-weight: bold;
+            background-color: #f8f9fa;
+            color: black;
+            /* Asegura que el número sea negro */
+            border: 1px solid #dee2e6;
+            /* Borde gris claro */
+        }
     </style>
 </head>
 
@@ -157,6 +208,8 @@
         <div class="card">
             <div class="card-header">
                 <h3 class="cart-title">Productos en el carrito</h3>
+                <span class="cart-count-label">Productos en el carrito: </span>
+                <span id="cart-count" class="badge badge-pill badge-secondary">0</span>
             </div>
             <div class="card-body">
                 <div class="inner-border">
@@ -208,10 +261,14 @@
             updateCart();
         });
 
+
         function updateCart() {
             const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
             const cartItemsContainer = document.getElementById('cart-items');
             cartItemsContainer.innerHTML = '';
+
+            // Actualizar el conteo de productos en el carrito
+            document.getElementById('cart-count').textContent = cartItems.length;
 
             cartItems.forEach(function(item) {
                 const row = document.createElement('tr');
