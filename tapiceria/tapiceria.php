@@ -95,18 +95,32 @@
             margin-right: 5px;
         }
 
+        .carrusel-titulo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            /* Cambia el color del texto según sea necesario */
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fondo semitransparente para mejorar la legibilidad */
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
         /* Ajustes para el carrusel */
         #carrusel {
             margin-top: 20px;
             margin-bottom: 20px;
-            max-height: 400px;
+            max-height: 200px;
             /* Reducimos la altura máxima del carrusel */
             overflow: hidden;
             /* Ocultamos el contenido que exceda la altura máxima */
         }
 
         #carouselExampleControls .carousel-item img {
-            max-height: 400px;
+            max-height: 200px;
             /* Ajustamos la altura máxima de las imágenes del carrusel */
             width: auto;
             /* Permitimos que el ancho se ajuste automáticamente */
@@ -190,6 +204,10 @@
             object-position: top;
         }
 
+        .card-product.filtered-out {
+            display: none;
+        }
+
         .content-product {
             padding: 10px;
             width: 100%;
@@ -203,17 +221,77 @@
             margin-bottom: 10px;
         }
 
+        .product-count-container {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+            /* Ajusta el margen derecho según sea necesario */
+        }
+
+        #product-count {
+            margin-right: 10px;
+            /* Espacio entre el contador y el campo de búsqueda */
+            color: rgba(0, 0, 0, 0.5);
+            /* Color negro semi-transparente */
+        }
+
+        .search-sort-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+        }
+
         .search-bar {
-            width: 50%;
-            margin: 20px auto;
-            text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
         }
 
         .search-bar input {
-            width: 100%;
+            padding: 10px 20px 10px 10px;
+            font-size: 16px;
+            width: 300px;
+            border-radius: 25px;
+            border: 1px solid #ccc;
+        }
+
+        .search-bar i {
+            position: absolute;
+            right: 10px;
+            font-size: 20px;
+            color: #aaa;
+        }
+
+        .sort-menu {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .sort-menu label {
+            margin-right: 10px;
+        }
+
+        .sort-menu select {
             padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 991.98px) {
+            .search-sort-container {
+                flex-direction: column;
+                /* Apilamiento en dispositivos móviles */
+                align-items: stretch;
+                /* Estirar los elementos para ocupar el ancho completo */
+            }
+
+            .sort-menu {
+                margin-left: 0;
+                /* Elimina el margen izquierdo en móviles */
+                margin-top: 10px;
+                /* Agrega un poco de margen superior */
+            }
         }
 
         .btn-comprar {
@@ -285,38 +363,42 @@
     </nav>
 
     <!-- Carrusel de Imágenes -->
-    <div id="carrusel" class="container-fluid">
-        <h2 class="text-center">TAPICERIA</h2>
+    <div id="carrusel" class="container-fluid position-relative">
+        <h2 class="text-center carrusel-titulo">TAPICERIA</h2>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="fondo1.jpg" class="d-block w-100 mx-auto" alt="Imagen 1">
+                    <img src="fondopro.jpg" class="d-block w-100 mx-auto" alt="Imagen 1">
                 </div>
                 <div class="carousel-item">
-                    <img src="fondo1.jpg" class="d-block w-100 mx-auto" alt="Imagen 2">
+                    <img src="fondopro.jpg" class="d-block w-100 mx-auto" alt="Imagen 2">
                 </div>
                 <div class="carousel-item">
-                    <img src="fondo1.jpg" class="d-block w-100 mx-auto" alt="Imagen 3">
+                    <img src="fondopro.jpg" class="d-block w-100 mx-auto" alt="Imagen 3">
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="search-sort-container">
 
+        <div class="product-count-container">
+            <span id="product-count"></span>
+        </div>
 
-    <!-- Barra de búsqueda -->
-    <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Buscar...">
-    </div>
+        <!-- Barra de búsqueda -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar...">
+            <i class="fas fa-search"></i>
+        </div>
 
-    <div class="container">
         <!-- Menú de ordenamiento -->
-        <div class="sort-menu text-center">
+        <div class="sort-menu">
             <label for="sortOptions">Ordenar por:</label>
-            <select id="sortOptions" class="ml-2">
+            <select id="sortOptions">
                 <option value="default">Seleccionar</option>
-                <option value="price">Precio <i class="fas fa-arrow-down"></i></option>
-                <option value="name">Nombre <i class="fas fa-arrow-down"></i></option>
+                <option value="price">Precio</option>
+                <option value="name">Nombre</option>
             </select>
         </div>
     </div>
@@ -516,9 +598,23 @@
 
             products.forEach(function(product) {
                 const title = product.querySelector('h3').textContent.trim().toLowerCase();
-                product.style.display = title.includes(searchTerm) ? 'block' : 'none';
+                if (title.includes(searchTerm)) {
+                    product.classList.remove('filtered-out'); // Mostrar producto que coincide
+                } else {
+                    product.classList.add('filtered-out'); // Ocultar producto que no coincide
+                }
             });
+
+            // Recalcular el conteo de productos visibles
+            updateProductCount();
         });
+
+        function updateProductCount() {
+            const visibleProducts = document.querySelectorAll('.card-product:not(.filtered-out)');
+            const countElement = document.getElementById('product-count');
+            countElement.textContent = `Productos encontrados: ${visibleProducts.length}`;
+        }
+
 
         document.getElementById('sortOptions').addEventListener('change', function() {
             const sortBy = this.value;
@@ -546,6 +642,18 @@
                 }
             });
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener el contenedor de productos
+            const container = document.querySelector('.container-products');
+            // Obtener la lista de productos
+            const products = container.querySelectorAll('.card-product');
+            // Obtener el elemento donde se mostrará el conteo
+            const countElement = document.getElementById('product-count');
+
+            // Mostrar el número de productos encontrados
+            countElement.textContent = `Productos encontrados: ${products.length}`;
+        });
     </script>
 
 </body>
