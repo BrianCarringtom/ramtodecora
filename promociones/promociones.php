@@ -152,7 +152,6 @@
             }
         }
 
-
         .section-title {
             font-size: 24px;
             font-weight: bold;
@@ -161,39 +160,47 @@
             margin-bottom: 40px;
         }
 
-        .promocion {
-            border: 1px solid #000;
-            /* Borde negro */
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-            /* Sombra */
-            transition: all 0.3s ease;
-            height: 100%;
+        .container-products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            /* Alineación centrada en pantallas grandes */
         }
 
-        .promocion:hover {
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        .card-product {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 350px;
+            /* Aumentado de 300px a 350px */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
 
-        .promocion img {
+        .card-product:hover {
+            transform: translateY(-5px);
+        }
+
+        .container1-img img {
             width: 100%;
             height: auto;
         }
 
-        .promocion h3 {
-            margin-top: 20px;
+        .content-product {
+            padding: 15px;
+        }
+
+        .content-product h3 {
+            font-size: 1.2em;
             margin-bottom: 10px;
         }
 
-        .promocion p {
+        .price {
+            font-size: 1em;
             margin-bottom: 10px;
-        }
-
-        .promocion .price {
-            font-size: 18px;
         }
 
         .original-price {
@@ -202,26 +209,38 @@
         }
 
         .discounted-price {
-            color: #e60000;
+            color: #e74c3c;
             font-weight: bold;
+        }
+
+        .discount-percentage {
+            background: #27ae60;
+            color: #fff;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.9em;
             margin-left: 10px;
         }
 
-        .ver-mas-btn {
-            display: inline-block;
-            padding: 10px 20px;
+        .btn-comprar {
             background-color: #515ae1;
             color: #fff;
             border: none;
+            padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
-            text-decoration: none;
+            transition: background-color 0.3s;
         }
 
-        .ver-mas-btn:hover {
+        .btn-comprar:hover {
+            background-color: #2980b9;
             color: #fff;
-            transition: background-color 0.3s ease;
-            background-color: rgba(81, 90, 225, 1);
+        }
+
+        .validity-date {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 10px;
         }
 
         /* Estilos del Footer */
@@ -324,50 +343,64 @@
     </header>
 
     <!-- Promociones Section -->
+    <!-- Sección de Promociones -->
     <section class="container mt-5">
         <h2 class="section-title">PROMOCIONES ESPECIALES</h2>
-        <div class="row">
+        <div class="container-products">
             <!-- Promoción 1 -->
-            <div class="col-md-4">
-                <div class="promocion">
-                    <img src="../assets/promo1.png" alt="Promoción 1">
+            <div class="card-product" data-name="Descuento del 20% en Electrónica" data-price="75.00" data-image="../assets/promo1.png">
+                <div class="container1-img">
+                    <img src="../assets/promo1.png" alt="Descuento del 20% en Electrónica">
+                </div>
+                <div class="content-product">
                     <h3>Descuento del 20% en Electrónica</h3>
-                    <p class="price"><span class="original-price">$100.00</span>
+                    <p class="price">
+                        <span class="original-price">$100.00</span>
                         <span class="discounted-price">$75.00</span>
                         <span class="discount-percentage">25%</span>
                     </p>
                     <p>Aprovecha un 20% de descuento en todos los productos electrónicos. ¡No te lo pierdas!.</p>
-                    <a href="detalles.php?promoId=1" class="ver-mas-btn">Ver más</a>
+                    <p class="validity-date">Válido hasta: 30/06/2024</p>
+                    <button class="btn btn-comprar" onclick="addToCart('Descuento del 20% en Electrónica', 75.00, '../assets/promo1.png')">Comprar</button>
                 </div>
             </div>
             <!-- Promoción 2 -->
-            <div class="col-md-4">
-                <div class="promocion">
-                    <img src="../assets/promo1.png" alt="Promoción 2">
+            <div class="card-product" data-name="2x1 en Ropa" data-price="150.00" data-image="../assets/promo1.png">
+                <div class="container1-img">
+                    <img src="../assets/promo1.png" alt="2x1 en Ropa">
+                </div>
+                <div class="content-product">
                     <h3>2x1 en Ropa</h3>
-                    <p class="price"><span class="original-price">$200.00</span>
+                    <p class="price">
+                        <span class="original-price">$200.00</span>
                         <span class="discounted-price">$150.00</span>
                         <span class="discount-percentage">25%</span>
                     </p>
                     <p>Compra una prenda y llévate otra gratis. ¡Renueva tu armario hoy mismo!.</p>
-                    <a href="detalles.php?promoId=2" class="ver-mas-btn">Ver más</a>
+                    <p class="validity-date">Válido hasta: 30/06/2024</p>
+                    <button class="btn btn-comprar" onclick="addToCart('2x1 en Ropa', 150.00, '../assets/promo1.png')">Comprar</button>
                 </div>
             </div>
             <!-- Promoción 3 -->
-            <div class="col-md-4">
-                <div class="promocion">
-                    <img src="../assets/promo1.png" alt="Promoción 3">
+            <div class="card-product" data-name="Envío Gratis en Compras Mayores a $50" data-price="250.00" data-image="../assets/promo1.png">
+                <div class="container1-img">
+                    <img src="../assets/promo1.png" alt="Envío Gratis en Compras Mayores a $50">
+                </div>
+                <div class="content-product">
                     <h3>Envío Gratis en Compras Mayores a $50</h3>
-                    <p class="price"><span class="original-price">$500.00</span>
+                    <p class="price">
+                        <span class="original-price">$500.00</span>
                         <span class="discounted-price">$250.00</span>
                         <span class="discount-percentage">50%</span>
                     </p>
                     <p>Obtén envío gratis en todas tus compras superiores a $50. ¡Aprovecha ya!.</p>
-                    <a href="detalles.php?promoId=3" class="ver-mas-btn">Ver más</a>
+                    <p class="validity-date">Válido hasta: 30/06/2024</p>
+                    <button class="btn btn-comprar" onclick="addToCart('Envío Gratis en Compras Mayores a $50', 250.00, '../assets/promo1.png')">Comprar</button>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -404,6 +437,203 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCartItems();
+        });
+
+        function showAddedToCartMessage() {
+            const message = document.createElement('div');
+            message.textContent = 'Producto agregado al carrito';
+            message.style.position = 'fixed';
+            message.style.left = '50%';
+            message.style.top = '50%';
+            message.style.transform = 'translate(-50%, -50%)';
+            message.style.backgroundColor = '#515ae1';
+            message.style.color = '#fff';
+            message.style.padding = '10px 20px';
+            message.style.borderRadius = '5px';
+            message.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
+            message.style.zIndex = '1000';
+            message.style.textAlign = 'center';
+            message.style.fontSize = '16px';
+
+            document.body.appendChild(message);
+
+            setTimeout(() => {
+                message.remove();
+            }, 1000);
+        }
+
+        function addToCart(productName, price) {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let existingItem = cartItems.find(item => item.name === productName);
+
+            const productImage = document.querySelector(`.card-product[data-name="${productName}"] img`).src;
+
+            if (existingItem) {
+                existingItem.quantity++;
+                existingItem.totalPrice += price;
+            } else {
+                existingItem = {
+                    name: productName,
+                    price: price,
+                    quantity: 1,
+                    totalPrice: price,
+                    image: productImage
+                };
+                cartItems.push(existingItem);
+            }
+
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            renderCartItems();
+            showAddedToCartMessage(); // Llama a la función para mostrar el mensaje
+        }
+
+        function renderCartItems() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            if (cartItemsContainer) {
+                cartItemsContainer.innerHTML = '';
+
+                cartItems.forEach(function(item) {
+                    const row = document.createElement('tr');
+                    row.classList.add('cart-item');
+
+                    ['name', 'price', 'quantity', 'totalPrice'].forEach(property => {
+                        const cell = document.createElement('td');
+                        if (property === 'price' || property === 'totalPrice') {
+                            cell.textContent = '$' + item[property].toFixed(2);
+                        } else {
+                            cell.textContent = item[property];
+                        }
+                        row.appendChild(cell);
+                    });
+
+                    const actionsCell = document.createElement('td');
+                    const incrementButton = createButton('+', 'btn-success', function() {
+                        addToCart(item.name, item.price);
+                    });
+
+                    const decrementButton = createButton('-', 'btn-warning', function() {
+                        removeFromCart(item.name, item.price);
+                    });
+
+                    actionsCell.appendChild(incrementButton);
+                    actionsCell.appendChild(decrementButton);
+                    row.appendChild(actionsCell);
+
+                    cartItemsContainer.appendChild(row);
+                });
+
+                updateCartTotal(cartItems);
+            }
+        }
+
+        function createButton(text, className, onClick) {
+            const button = document.createElement('button');
+            button.textContent = text;
+            button.classList.add('btn', 'btn-sm', className);
+            button.addEventListener('click', onClick);
+            return button;
+        }
+
+        function removeFromCart(productName, price) {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const existingItemIndex = cartItems.findIndex(item => item.name === productName);
+
+            if (existingItemIndex !== -1) {
+                const existingItem = cartItems[existingItemIndex];
+                if (existingItem.quantity > 1) {
+                    existingItem.quantity--;
+                    existingItem.totalPrice -= price;
+                } else {
+                    cartItems.splice(existingItemIndex, 1);
+                }
+            }
+
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            renderCartItems();
+        }
+
+        function updateCartTotal(cartItems) {
+            let totalPrice = 0;
+            cartItems.forEach(function(item) {
+                totalPrice += item.totalPrice;
+            });
+
+            document.getElementById('cart-total').innerText = totalPrice.toFixed(2);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCart();
+            renderCartItems();
+        });
+
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.trim().toLowerCase();
+            const products = document.querySelectorAll('.card-product');
+
+            products.forEach(function(product) {
+                const title = product.querySelector('h3').textContent.trim().toLowerCase();
+                if (title.includes(searchTerm)) {
+                    product.classList.remove('filtered-out'); // Mostrar producto que coincide
+                } else {
+                    product.classList.add('filtered-out'); // Ocultar producto que no coincide
+                }
+            });
+
+            // Recalcular el conteo de productos visibles
+            updateProductCount();
+        });
+
+        function updateProductCount() {
+            const visibleProducts = document.querySelectorAll('.card-product:not(.filtered-out)');
+            const countElement = document.getElementById('product-count');
+            countElement.textContent = `Productos encontrados: ${visibleProducts.length}`;
+        }
+
+
+        document.getElementById('sortOptions').addEventListener('change', function() {
+            const sortBy = this.value;
+            const products = Array.from(document.querySelectorAll('.card-product'));
+
+            if (sortBy === 'price') {
+                products.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+            } else if (sortBy === 'name') {
+                products.sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
+            }
+
+            const container = document.querySelector('.container-products');
+            container.innerHTML = '';
+            products.forEach(product => container.appendChild(product));
+        });
+
+        function filterProducts(query) {
+            const products = document.querySelectorAll('.card-product');
+            products.forEach(product => {
+                const title = product.querySelector('h3').innerText.toLowerCase();
+                if (title.includes(query.toLowerCase())) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener el contenedor de productos
+            const container = document.querySelector('.container-products');
+            // Obtener la lista de productos
+            const products = container.querySelectorAll('.card-product');
+            // Obtener el elemento donde se mostrará el conteo
+            const countElement = document.getElementById('product-count');
+
+            // Mostrar el número de productos encontrados
+            countElement.textContent = `Productos encontrados: ${products.length}`;
+        });
+    </script>
+
 
 </body>
 
