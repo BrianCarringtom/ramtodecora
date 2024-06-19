@@ -63,7 +63,7 @@
             color: black;
             text-align: center;
             overflow: hidden;
-            background-image: url('images/Fondopromo.jpg');
+            background-image: url('Fondopromo.jpg');
             background-size: cover;
             background-position: center;
             border-top-left-radius: 0;
@@ -330,7 +330,7 @@
             <!-- Promoción 1 -->
             <div class="col-md-4">
                 <div class="promocion">
-                    <img src="images/promo1.png" alt="Promoción 1">
+                    <img src="../assets/promo1.png" alt="Promoción 1">
                     <h3>Descuento del 20% en Electrónica</h3>
                     <p class="price"><span class="original-price">$100.00</span>
                         <span class="discounted-price">$75.00</span>
@@ -343,7 +343,7 @@
             <!-- Promoción 2 -->
             <div class="col-md-4">
                 <div class="promocion">
-                    <img src="images/promo1.png" alt="Promoción 2">
+                    <img src="../assets/promo1.png" alt="Promoción 2">
                     <h3>2x1 en Ropa</h3>
                     <p class="price"><span class="original-price">$200.00</span>
                         <span class="discounted-price">$150.00</span>
@@ -356,7 +356,7 @@
             <!-- Promoción 3 -->
             <div class="col-md-4">
                 <div class="promocion">
-                    <img src="images/promo1.png" alt="Promoción 3">
+                    <img src="../assets/promo1.png" alt="Promoción 3">
                     <h3>Envío Gratis en Compras Mayores a $50</h3>
                     <p class="price"><span class="original-price">$500.00</span>
                         <span class="discounted-price">$250.00</span>

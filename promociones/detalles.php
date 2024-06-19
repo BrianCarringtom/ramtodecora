@@ -278,7 +278,7 @@
         const promociones = {
             1: {
                 title: 'Descuento del 20% en Electrónica',
-                image: 'images/promo1.png',
+                image: '../assets/promo1.png',
                 description: 'Aprovecha un 20% de descuento en todos los productos electrónicos. ¡No te lo pierdas!.',
                 originalPrice: '$100.00',
                 discountedPrice: '$75.00',
@@ -287,7 +287,7 @@
             },
             2: {
                 title: '2x1 en Ropa',
-                image: 'images/promo1.png',
+                image: '../assets/promo1.png',
                 description: 'Compra una prenda y llévate otra gratis. ¡Renueva tu armario hoy mismo!.',
                 originalPrice: '$200.00',
                 discountedPrice: '$150.00',
@@ -296,7 +296,7 @@
             },
             3: {
                 title: 'Envío Gratis en Compras Mayores a $50',
-                image: 'images/promo1.png',
+                image: '../assets/promo1.png',
                 description: 'Obtén envío gratis en todas tus compras superiores a $50. ¡Aprovecha ya.',
                 originalPrice: '$500.00',
                 discountedPrice: '$250.00',
