@@ -26,7 +26,7 @@
 
         .navbar-nav .nav-link {
             color: rgba(20, 180, 145, 1) !important;
-            /* Ajusta este color al que mejor se vea */
+            font-weight: bold;
         }
 
 
@@ -34,8 +34,6 @@
             color: white !important;
             border-radius: 20px;
             background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
-            ;
-            /* Cambia el color al pasar el cursor sobre el enlace */
         }
 
         .dropdown-item:hover {
