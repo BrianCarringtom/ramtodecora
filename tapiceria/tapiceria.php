@@ -304,9 +304,9 @@
         }
 
         .btn-comprar:hover {
-            background-color: #515ae1;
+            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
             color: #fff;
-            box-shadow: 0 0 10px rgba(81, 90, 225, 0.7);
+            transform: scale(1.1);
         }
     </style>
 </head>

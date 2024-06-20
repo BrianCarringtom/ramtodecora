@@ -25,20 +25,20 @@
         }
 
         .navbar-nav .nav-link {
-            color: #515ae1 !important;
+            color: rgba(20, 180, 145, 1) !important;
             font-weight: bold;
         }
+
 
         .navbar-nav .nav-link:hover {
             color: white !important;
             border-radius: 20px;
-            background-color: #515ae1;
-            /* Cambia el color al pasar el cursor sobre el enlace */
+            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
         }
 
         .dropdown-item:hover {
             color: white !important;
-            background-color: #515ae1;
+            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
         }
 
         /* Estilos para el botón de navegación en dispositivos móviles */
@@ -71,8 +71,7 @@
         /* Estilos del Footer */
         .footer,
         .py-4 {
-            background-color: #515ae1;
-            /* Fondo oscuro */
+            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
             color: white;
             padding-top: 40px;
             padding-bottom: 20px;
@@ -295,18 +294,19 @@
         }
 
         .btn-comprar {
-            background-color: #515ae1;
+            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
             color: #fff;
-            border: 1px solid #515ae1;
             padding: 10px 20px;
+            border: none;
             border-radius: 5px;
+            cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
-            /* Transición suave */
         }
 
         .btn-comprar:hover {
-            background-color: #fff;
-            color: #515ae1;
+            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
+            color: #fff;
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -480,7 +480,7 @@
             message.style.left = '50%';
             message.style.top = '50%';
             message.style.transform = 'translate(-50%, -50%)';
-            message.style.backgroundColor = '#515ae1';
+            message.style.background = 'linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%)';
             message.style.color = '#fff';
             message.style.padding = '10px 20px';
             message.style.borderRadius = '5px';

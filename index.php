@@ -31,20 +31,20 @@
         }
 
         .navbar-nav .nav-link {
-            color: #515ae1 !important;
+            color: rgba(20, 180, 145, 1) !important;
             font-weight: bold;
         }
+
 
         .navbar-nav .nav-link:hover {
             color: white !important;
             border-radius: 20px;
-            background-color: #515ae1;
-            /* Cambia el color al pasar el cursor sobre el enlace */
+            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
         }
 
         .dropdown-item:hover {
             color: white !important;
-            background-color: #515ae1;
+            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
         }
 
         /* Estilos para el botón de navegación en dispositivos móviles */
@@ -280,7 +280,7 @@
         }
 
         .btn-view-more:hover {
-            background: #515ae1;
+            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
             color: #fff;
             transform: scale(1.1);
         }
@@ -294,7 +294,7 @@
         /* Estilos del Footer */
         .footer,
         .py-4 {
-            background-color: #515ae1;
+            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
             color: white;
             padding-top: 40px;
             padding-bottom: 20px;
@@ -321,7 +321,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #25d366;
+            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
             color: white;
             border-radius: 50%;
             padding: 15px;
@@ -371,7 +371,7 @@
         }
 
         .custom-btn {
-            background-color: #515ae1;
+            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
             color: #ffffff;
             border: none;
             padding: 10px 20px;
@@ -381,8 +381,9 @@
         }
 
         .custom-btn:hover {
-            background-color: #fff;
-            color: #515ae1;
+            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
+            color: #fff;
+            transform: scale(1.1);
         }
     </style>
 
