@@ -373,13 +373,13 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="fondopro.jpg" class="d-block w-100 mx-auto" alt="Imagen 1">
+                    <img src="fondopro.webp" class="d-block w-100 mx-auto" alt="Imagen 1">
                 </div>
                 <div class="carousel-item">
-                    <img src="fondopro.jpg" class="d-block w-100 mx-auto" alt="Imagen 2">
+                    <img src="fondopro.webp" class="d-block w-100 mx-auto" alt="Imagen 2">
                 </div>
                 <div class="carousel-item">
-                    <img src="fondopro.jpg" class="d-block w-100 mx-auto" alt="Imagen 3">
+                    <img src="fondopro.webp" class="d-block w-100 mx-auto" alt="Imagen 3">
                 </div>
             </div>
         </div>

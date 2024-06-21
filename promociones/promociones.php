@@ -63,7 +63,7 @@
             color: black;
             text-align: center;
             overflow: hidden;
-            background-image: url('Fondopromo.jpg');
+            background-image: url('Fondopromo.avif');
             background-size: cover;
             background-position: center;
             border-top-left-radius: 0;
