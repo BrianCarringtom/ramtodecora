@@ -359,7 +359,6 @@
             updateCart();
         });
 
-
         function updateCart() {
             const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
             const cartItemsContainer = document.getElementById('cart-items');
@@ -368,56 +367,62 @@
             // Actualizar el conteo de productos en el carrito
             document.getElementById('cart-count').textContent = cartItems.length;
 
-            cartItems.forEach(function(item) {
-                const row = document.createElement('tr');
-                row.classList.add('cart-item');
+            if (cartItems.length === 0) {
+                // Mostrar mensaje de carrito vacío
+                cartItemsContainer.innerHTML = '<tr><td colspan="5">No hay productos en el carrito</td></tr>';
+                document.getElementById('cart-total').innerText = '0.00'; // Reiniciar total a $0.00
+            } else {
+                cartItems.forEach(function(item) {
+                    const row = document.createElement('tr');
+                    row.classList.add('cart-item');
 
-                // Agregar imagen al producto
-                const imageCell = document.createElement('td');
-                const image = document.createElement('img');
-                image.src = item.image;
-                image.style.width = '50px';
-                image.style.height = '50px';
-                image.style.objectFit = 'cover';
-                imageCell.appendChild(image);
-                row.appendChild(imageCell);
+                    // Agregar imagen al producto
+                    const imageCell = document.createElement('td');
+                    const image = document.createElement('img');
+                    image.src = item.image;
+                    image.style.width = '50px';
+                    image.style.height = '50px';
+                    image.style.objectFit = 'cover';
+                    imageCell.appendChild(image);
+                    row.appendChild(imageCell);
 
-                ['name', 'price', 'quantity', 'totalPrice'].forEach(property => {
-                    const cell = document.createElement('td');
-                    if (property === 'price' || property === 'totalPrice') {
-                        cell.textContent = '$' + item[property].toFixed(2);
-                    } else {
-                        cell.textContent = item[property];
-                    }
-                    row.appendChild(cell);
+                    ['name', 'price', 'quantity', 'totalPrice'].forEach(property => {
+                        const cell = document.createElement('td');
+                        if (property === 'price' || property === 'totalPrice') {
+                            cell.textContent = '$' + item[property].toFixed(2);
+                        } else {
+                            cell.textContent = item[property];
+                        }
+                        row.appendChild(cell);
+                    });
+
+                    const actionsCell = document.createElement('td');
+
+                    const incrementButton = createButton('+', 'btn-success', function() {
+                        addToCart(item.name, item.price, item.image);
+                    });
+
+                    const decrementButton = createButton('-', 'btn-warning', function() {
+                        removeFromCart(item.name, item.price);
+                    });
+
+                    const deleteButton = createButton('x', 'btn-danger', function() {
+                        deleteFromCart(item.name);
+                    });
+
+                    decrementButton.classList.add('btn-separator');
+                    deleteButton.classList.add('btn-separator');
+
+                    actionsCell.appendChild(incrementButton);
+                    actionsCell.appendChild(decrementButton);
+                    actionsCell.appendChild(deleteButton);
+                    row.appendChild(actionsCell);
+
+                    cartItemsContainer.appendChild(row);
                 });
 
-                const actionsCell = document.createElement('td');
-
-                const incrementButton = createButton('+', 'btn-success', function() {
-                    addToCart(item.name, item.price, item.image);
-                });
-
-                const decrementButton = createButton('-', 'btn-warning', function() {
-                    removeFromCart(item.name, item.price);
-                });
-
-                const deleteButton = createButton('x', 'btn-danger', function() {
-                    deleteFromCart(item.name);
-                });
-
-                decrementButton.classList.add('btn-separator');
-                deleteButton.classList.add('btn-separator');
-
-                actionsCell.appendChild(incrementButton);
-                actionsCell.appendChild(decrementButton);
-                actionsCell.appendChild(deleteButton);
-                row.appendChild(actionsCell);
-
-                cartItemsContainer.appendChild(row);
-            });
-
-            updateCartTotal(cartItems);
+                updateCartTotal(cartItems);
+            }
         }
 
         function createButton(text, className, onClick) {
@@ -489,11 +494,15 @@
             history.back();
         });
 
-
         // Botón de pago
         document.getElementById('checkout-btn').addEventListener('click', function() {
-            history.pushState(null, '', window.location.href);
-            $('#paymentModal').modal('show');
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            if (cartItems.length === 0) {
+                alert('No hay productos en el carrito');
+            } else {
+                history.pushState(null, '', window.location.href);
+                $('#paymentModal').modal('show');
+            }
         });
     </script>
 
