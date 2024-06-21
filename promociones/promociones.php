@@ -194,9 +194,17 @@
             transform: translateY(-5px);
         }
 
+        .container1-img {
+            width: 100%;
+            height: 300px;
+            /* Ajusta la altura según tus necesidades */
+            overflow: hidden;
+        }
+
         .container1-img img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
         }
 
         .content-product {
@@ -364,16 +372,16 @@
             <!-- Promoción 1 -->
             <div class="card-product" data-name="Descuento del 20% en Electrónica" data-price="75.00" data-image="../assets/promo1.png">
                 <div class="container1-img">
-                    <img src="../assets/promo1.png" alt="Descuento del 20% en Electrónica">
+                    <img src="../assets/promo1.jpg" alt="Descuento del 20% en Electrónica">
                 </div>
                 <div class="content-product">
-                    <h3>Descuento del 20% en Electrónica</h3>
+                    <h3>Descuento del 20% en Decoraciones</h3>
                     <p class="price">
                         <span class="original-price">$100.00</span>
                         <span class="discounted-price">$75.00</span>
                         <span class="discount-percentage">25%</span>
                     </p>
-                    <p>Aprovecha un 20% de descuento en todos los productos electrónicos. ¡No te lo pierdas!.</p>
+                    <p>Aprovecha un 25% de descuento en todos los productos domesticos. ¡No te lo pierdas!.</p>
                     <p class="validity-date">Válido hasta: 30/06/2024</p>
                     <button class="btn btn-comprar" onclick="addToCart('Descuento del 20% en Electrónica', 75.00, '../assets/promo1.png')">Comprar</button>
                 </div>
@@ -381,7 +389,7 @@
             <!-- Promoción 2 -->
             <div class="card-product" data-name="2x1 en Ropa" data-price="150.00" data-image="../assets/promo1.png">
                 <div class="container1-img">
-                    <img src="../assets/promo1.png" alt="2x1 en Ropa">
+                    <img src="../assets/promo2.webp" alt="2x1 en Ropa">
                 </div>
                 <div class="content-product">
                     <h3>2x1 en Ropa</h3>
@@ -398,7 +406,7 @@
             <!-- Promoción 3 -->
             <div class="card-product" data-name="Envío Gratis en Compras Mayores a $50" data-price="250.00" data-image="../assets/promo1.png">
                 <div class="container1-img">
-                    <img src="../assets/promo1.png" alt="Envío Gratis en Compras Mayores a $50">
+                    <img src="../assets/pormo3.jpg" alt="Envío Gratis en Compras Mayores a $50">
                 </div>
                 <div class="content-product">
                     <h3>Envío Gratis en Compras Mayores a $50</h3>
