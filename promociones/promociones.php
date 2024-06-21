@@ -93,19 +93,32 @@
 
         .title-subtitle {
             text-align: right;
-            margin-bottom: 80px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .announcement-icon {
+            font-size: 4rem;
+            /* Ajusta el tamaño del ícono */
+            margin-right: 20px;
+            /* Espacio entre el ícono y el texto */
+            color: rgba(0, 0, 0, 0.7);
+            /* Color del ícono */
+        }
+
+        .text-content {
+            text-align: left;
         }
 
         .title {
             font-size: 2.25rem;
-            /* 36px */
             font-weight: bold;
             margin-bottom: 0;
         }
 
         .subtitle {
             font-size: 1.5rem;
-            /* 24px */
             margin-top: 5px;
         }
 
@@ -113,7 +126,6 @@
         @media (max-width: 1200px) {
             .title {
                 font-size: 2rem;
-                /* Ajusta el tamaño para pantallas más pequeñas */
             }
 
             .subtitle {
@@ -124,7 +136,6 @@
         @media (max-width: 768px) {
             .title-subtitle {
                 margin-bottom: 60px;
-                /* Ajusta el margen para pantallas medianas */
             }
 
             .title {
@@ -139,7 +150,6 @@
         @media (max-width: 480px) {
             .title-subtitle {
                 margin-bottom: 40px;
-                /* Ajusta el margen para pantallas pequeñas */
             }
 
             .title {
@@ -148,9 +158,9 @@
 
             .subtitle {
                 font-size: 0.875rem;
-                /* 14px */
             }
         }
+
 
         .section-title {
             font-size: 24px;
@@ -335,12 +345,16 @@
         <div class="overlay">
             <div class="header-content">
                 <div class="title-subtitle">
-                    <h1 class="title">"Ofertas de Temporada: ¡No te las Pierdas!"</h1>
-                    <h2 class="subtitle">"¡Aprovecha esta oferta única! Descuentos exclusivos"</h2>
+                    <i class="fas fa-bullhorn announcement-icon"></i> <!-- Ícono de anuncio -->
+                    <div class="text-content">
+                        <h1 class="title">"Ofertas de Temporada: ¡No te las Pierdas!"</h1>
+                        <h2 class="subtitle">"¡Aprovecha esta oferta única! Descuentos exclusivos"</h2>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
+
 
     <!-- Promociones Section -->
     <!-- Sección de Promociones -->

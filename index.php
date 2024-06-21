@@ -450,13 +450,13 @@
         <div id="headerCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="assets/fondo1.avif" class="d-block w-100" alt="Imagen 1">
+                    <img src="assets/fondo2.webp" class="d-block w-100" alt="Imagen 1">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/fondo2.jpg" class="d-block w-100" alt="Imagen 2">
+                    <img src="assets/fondo1.webp" class="d-block w-100" alt="Imagen 2">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/fondo4.avif" class="d-block w-100" alt="Imagen 3">
+                    <img src="assets/fondo3.webp" class="d-block w-100" alt="Imagen 3">
                 </div>
             </div>
         </div>
