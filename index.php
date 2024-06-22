@@ -295,13 +295,13 @@
         .footer,
         .py-4 {
             background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
-            color: white;
+            color: black;
             padding-top: 40px;
             padding-bottom: 20px;
         }
 
         .social-link {
-            color: white;
+            color: black;
             margin-right: 15px;
             text-decoration: none;
             margin-left: 20px;

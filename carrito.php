@@ -31,7 +31,6 @@
             font-weight: bold;
         }
 
-
         .navbar-nav .nav-link:hover {
             color: white !important;
             border-radius: 20px;
@@ -147,6 +146,18 @@
             /* Centrar las imágenes */
         }
 
+        /* Ajustar ancho de las columnas */
+        .table th:nth-child(2),
+        .table td:nth-child(2) {
+            width: 40%;
+            /* Ancho mayor para la columna "Producto" */
+        }
+
+        .table th:not(:nth-child(2)),
+        .table td:not(:nth-child(2)) {
+            width: 12%;
+            /* Ancho menor para las demás columnas */
+        }
 
         /* Estilo para el contorno interno */
         .card-body {
@@ -251,12 +262,6 @@
             /* Cambia el color del texto a blanco */
         }
 
-        .btn-custom:hover {
-            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
-            color: #fff;
-            transform: scale(1.1);
-        }
-
         /* Si quieres cambiar también el color de fondo del botón Regresar */
         #back-btn {
             background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
@@ -265,12 +270,6 @@
             /* Cambia el color del borde */
             color: #fff;
             /* Cambia el color del texto a blanco */
-        }
-
-        #back-btn:hover {
-            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
-            color: #fff;
-            transform: scale(1.1);
         }
     </style>
 </head>
