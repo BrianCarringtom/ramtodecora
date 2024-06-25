@@ -53,34 +53,17 @@
             }
         }
 
-
-        .section-title {
-            margin-top: 60px;
-            margin-bottom: 30px;
+        .bordered-section {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 50px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .section-content {
-            margin-bottom: 60px;
-        }
-
-        .section {
-            padding: 100px 0;
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        }
-
-        #mision {
-            background-image: url('../assets/mision.jpeg');
-        }
-
-        #vision {
-            background-image: url('../assets/vision.jpg');
-        }
-
-        #horarios {
-            background-image: url('../assets/horario.avif');
+        .center-content {
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
         }
 
         .section-overlay {
@@ -170,59 +153,47 @@
         </div>
     </nav>
 
-    <!-- Mission Section -->
-    <section id="mision" class="section" data-aos="fade-up">
-        <div class="section-overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center section-title">
-                        <h2><i class="fas fa-user"></i> Misión</h2>
-                    </div>
-                    <div class="col-md-12 section-content">
-                        <p class="text-center">Te brindamos soluciones de decoración con nuestra amplia variedad de cortinas, telas decorativas, tapices, alfombras, tapetes y accesorios decorativos.</p>
-                    </div>
+    <!-- Central Content Section -->
+    <section class="center-content">
+        <div class="container">
+            <div class="row">
+                <div id="horarios" class="col-md-12 bordered-section full-width">
+                    <h2><i class="far fa-clock"></i>Horarios</h2>
+                    <p>Lunes a Viernes: 8:30 - 14:00 y 16:00 - 19:00</p>
+                    <p>Sábados: 8:30 - 14:00</p>
+                    <p>Domingos: Cerrado</p>
+                    <div id="reloj"></div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End of Mission Section -->
 
-    <!-- Visión Section -->
-    <section id="vision" class="section" data-aos="fade-up">
-        <div class="section-overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center section-title">
-                        <h2><i class="fas fa-eye"></i> Visión</h2>
-                    </div>
-                    <div class="col-md-12 section-content">
-                        <p class="text-center">Somos una empresa comercializadora, diseñadora y productora de artículos de decoración entre los que destacan textiles decorativos para uso interior y exterior. Contamos con un sistema integral de servicios que complementan nuestros productos, como la limpieza y el recubrimiento de teflón para el cuidado de los tapices.</p>
-                    </div>
+    <section class="center-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 style="font-weight: bold;">RAMTO DECORA</h2>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End of Vision Section -->
 
-    <!-- Horarios Section -->
-    <section id="horarios" class="section" data-aos="fade-up">
-        <div class="section-overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center section-title">
-                        <h2><i class="far fa-clock"></i> Horarios</h2>
-                    </div>
-                    <div class="col-md-12 section-content">
-                        <p class="text-center"><strong>Lunes a Viernes:</strong> 8:30 - 14:00 y 16:00 - 19:00</p>
-                        <p class="text-center"><strong>Sábados:</strong> 8:30 - 14:00</p>
-                        <p class="text-center"><strong>Domingos:</strong> Cerrado</p>
-                        <div id="reloj" class="text-center"></div>
-                    </div>
+    <!-- Sección de Misión y Visión -->
+    <section class="center-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center bordered-section margin-bottom-20" id="mision">
+                    <h2><i class="fas fa-bullseye"></i> Misión</h2>
+                    <p>Te brindamos soluciones de decoración con nuestra amplia variedad de cortinas, telas decorativas, tapices, alfombras, tapetes y accesorios decorativos.</p>
+                </div>
+                <div class="col-md-6 text-center bordered-section" id="vision">
+                    <h2><i class="fas fa-eye"></i> Visión</h2>
+                    <p>Somos una empresa comercializadora, diseñadora y productora de artículos de decoración entre los que destacan textiles decorativos para uso interior y exterior. Contamos con un sistema integral de servicios que complementan nuestros productos, como la limpieza y el recubrimiento de teflón para el cuidado de los tapices.</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End of Horarios Section -->
+
 
     <!-- Footer -->
     <footer class="footer">
