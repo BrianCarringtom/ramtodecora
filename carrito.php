@@ -494,6 +494,11 @@
             localStorage.setItem('cartItems', JSON.stringify(newCartItems));
             updateCart();
         }
+
+        // Botón de regreso
+        document.getElementById('back-btn').addEventListener('click', function() {
+            history.back();
+        });
     </script>
 </body>
 
