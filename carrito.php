@@ -261,6 +261,16 @@
             color: #fff;
             /* Cambia el color del texto a blanco */
         }
+
+        /* Si quieres cambiar también el color de fondo del botón Regresar */
+        #back-btn {
+            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
+            /* Cambia el color de fondo a azul (ejemplo) */
+            border-color: #fff;
+            /* Cambia el color del borde */
+            color: #fff;
+            /* Cambia el color del texto a blanco */
+        }
     </style>
 </head>
 
@@ -331,7 +341,9 @@
                         <img src="assets/mastercard.png" alt="">
                     </div>
                     <div class="separator-line"></div>
-                    <div id="paypal-button-container"></div>
+                    <button class="btn btn-custom mt-3" id="checkout-btn">
+                        Pagar <i class="fas fa-credit-card"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -499,7 +511,39 @@
         document.getElementById('back-btn').addEventListener('click', function() {
             history.back();
         });
+
+        // Botón de pago
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            if (cartItems.length === 0) {
+                alert('No hay productos en el carrito');
+            } else {
+                history.pushState(null, '', window.location.href);
+                $('#paymentModal').modal('show');
+            }
+        });
     </script>
+
+    <!-- Modal de opciones de pago -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentModalLabel">Opciones de Pago</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Seleccione su método de pago preferido:</p>
+                    <div id="paypal-button-container"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
