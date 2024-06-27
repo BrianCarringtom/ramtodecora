@@ -261,16 +261,6 @@
             color: #fff;
             /* Cambia el color del texto a blanco */
         }
-
-        /* Si quieres cambiar también el color de fondo del botón Regresar */
-        #back-btn {
-            background: linear-gradient(90deg, rgba(93, 224, 201, 1) 0%, rgba(114, 202, 188, 1) 52%, rgba(20, 180, 145, 1) 100%);
-            /* Cambia el color de fondo a azul (ejemplo) */
-            border-color: #fff;
-            /* Cambia el color del borde */
-            color: #fff;
-            /* Cambia el color del texto a blanco */
-        }
     </style>
 </head>
 
@@ -341,9 +331,7 @@
                         <img src="assets/mastercard.png" alt="">
                     </div>
                     <div class="separator-line"></div>
-                    <button class="btn btn-custom mt-3" id="checkout-btn">
-                        Pagar <i class="fas fa-credit-card"></i>
-                    </button>
+                    <div id="paypal-button-container"></div>
                 </div>
             </div>
         </div>
@@ -352,10 +340,28 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             updateCart();
+
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: document.getElementById('cart-total').textContent.replace('$', '')
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        alert('Pago completado por ' + details.payer.name.given_name);
+                    });
+                }
+            }).render('#paypal-button-container');
         });
 
         function updateCart() {
@@ -483,53 +489,12 @@
 
         function deleteFromCart(productName) {
             const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            const updatedCartItems = cartItems.filter(item => item.name !== productName);
-            localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+            const newCartItems = cartItems.filter(item => item.name !== productName);
+
+            localStorage.setItem('cartItems', JSON.stringify(newCartItems));
             updateCart();
         }
-
-        // Botón de regreso
-        document.getElementById('back-btn').addEventListener('click', function() {
-            history.back();
-        });
-
-        // Botón de pago
-        document.getElementById('checkout-btn').addEventListener('click', function() {
-            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            if (cartItems.length === 0) {
-                alert('No hay productos en el carrito');
-            } else {
-                history.pushState(null, '', window.location.href);
-                $('#paymentModal').modal('show');
-            }
-        });
     </script>
-
-
-    <!-- Modal de opciones de pago -->
-    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="paymentModalLabel">Opciones de Pago</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Seleccione su método de pago preferido:</p>
-                    <ul>
-                        <li><a href="https://www.santander.com.mx/" target="_blank">Pagar con Banco Santander</a></li>
-                        <li><a href="https://www.banorte.com/" target="_blank">Pagar con Banorte</a></li>
-                        <li><a href="https://www.bancomer.com/" target="_blank">Pagar con Bancomer</a></li>
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
